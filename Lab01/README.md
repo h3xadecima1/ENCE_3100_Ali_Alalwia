@@ -1,4 +1,4 @@
-# Explanation of Scrolling "HELO" Verilog Code
+# Scrolling "HELO" Verilog Code
 
 ## Module Declaration
 ```verilog
