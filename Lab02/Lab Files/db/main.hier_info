@@ -3,10 +3,10 @@ SW[0] => SW[0].IN3
 SW[1] => SW[1].IN3
 SW[2] => SW[2].IN3
 SW[3] => SW[3].IN3
-SW[4] => SW[4].IN2
-SW[5] => SW[5].IN2
-SW[6] => SW[6].IN2
-SW[7] => SW[7].IN2
+SW[4] => SW[4].IN3
+SW[5] => SW[5].IN3
+SW[6] => SW[6].IN3
+SW[7] => SW[7].IN3
 SW[8] => SW[8].IN1
 SW[9] => ~NO_FANOUT~
 LEDR[0] <= <GND>
@@ -19,38 +19,54 @@ LEDR[6] <= <GND>
 LEDR[7] <= <GND>
 LEDR[8] <= <GND>
 LEDR[9] <= checkBCD:cb0.port2
-HEX0[0] <= bin_to_dec_v2:bin2dec0.port5
-HEX0[1] <= bin_to_dec_v2:bin2dec0.port5
-HEX0[2] <= bin_to_dec_v2:bin2dec0.port5
-HEX0[3] <= bin_to_dec_v2:bin2dec0.port5
-HEX0[4] <= bin_to_dec_v2:bin2dec0.port5
-HEX0[5] <= bin_to_dec_v2:bin2dec0.port5
-HEX0[6] <= bin_to_dec_v2:bin2dec0.port5
-HEX0[7] <= bin_to_dec_v2:bin2dec0.port5
-HEX1[0] <= bin_to_dec_v2:bin2dec0.port6
-HEX1[1] <= bin_to_dec_v2:bin2dec0.port6
-HEX1[2] <= bin_to_dec_v2:bin2dec0.port6
-HEX1[3] <= bin_to_dec_v2:bin2dec0.port6
-HEX1[4] <= bin_to_dec_v2:bin2dec0.port6
-HEX1[5] <= bin_to_dec_v2:bin2dec0.port6
-HEX1[6] <= bin_to_dec_v2:bin2dec0.port6
-HEX1[7] <= bin_to_dec_v2:bin2dec0.port6
-HEX2[0] <= <GND>
-HEX2[1] <= <GND>
-HEX2[2] <= <GND>
-HEX2[3] <= <GND>
-HEX2[4] <= <GND>
-HEX2[5] <= <GND>
-HEX2[6] <= <GND>
-HEX2[7] <= <GND>
-HEX3[0] <= <GND>
-HEX3[1] <= <GND>
-HEX3[2] <= <GND>
-HEX3[3] <= <GND>
-HEX3[4] <= <GND>
-HEX3[5] <= <GND>
-HEX3[6] <= <GND>
-HEX3[7] <= <GND>
+HEX0[0] <= bin_to_dec_v2:bin2dec_sw0.port5
+HEX0[1] <= bin_to_dec_v2:bin2dec_sw0.port5
+HEX0[2] <= bin_to_dec_v2:bin2dec_sw0.port5
+HEX0[3] <= bin_to_dec_v2:bin2dec_sw0.port5
+HEX0[4] <= bin_to_dec_v2:bin2dec_sw0.port5
+HEX0[5] <= bin_to_dec_v2:bin2dec_sw0.port5
+HEX0[6] <= bin_to_dec_v2:bin2dec_sw0.port5
+HEX0[7] <= bin_to_dec_v2:bin2dec_sw0.port5
+HEX1[0] <= bin_to_dec_v2:bin2dec_sw0.port6
+HEX1[1] <= bin_to_dec_v2:bin2dec_sw0.port6
+HEX1[2] <= bin_to_dec_v2:bin2dec_sw0.port6
+HEX1[3] <= bin_to_dec_v2:bin2dec_sw0.port6
+HEX1[4] <= bin_to_dec_v2:bin2dec_sw0.port6
+HEX1[5] <= bin_to_dec_v2:bin2dec_sw0.port6
+HEX1[6] <= bin_to_dec_v2:bin2dec_sw0.port6
+HEX1[7] <= bin_to_dec_v2:bin2dec_sw0.port6
+HEX2[0] <= bin_to_dec_v2:bin2dec_sw1.port5
+HEX2[1] <= bin_to_dec_v2:bin2dec_sw1.port5
+HEX2[2] <= bin_to_dec_v2:bin2dec_sw1.port5
+HEX2[3] <= bin_to_dec_v2:bin2dec_sw1.port5
+HEX2[4] <= bin_to_dec_v2:bin2dec_sw1.port5
+HEX2[5] <= bin_to_dec_v2:bin2dec_sw1.port5
+HEX2[6] <= bin_to_dec_v2:bin2dec_sw1.port5
+HEX2[7] <= bin_to_dec_v2:bin2dec_sw1.port5
+HEX3[0] <= bin_to_dec_v2:bin2dec_sw1.port6
+HEX3[1] <= bin_to_dec_v2:bin2dec_sw1.port6
+HEX3[2] <= bin_to_dec_v2:bin2dec_sw1.port6
+HEX3[3] <= bin_to_dec_v2:bin2dec_sw1.port6
+HEX3[4] <= bin_to_dec_v2:bin2dec_sw1.port6
+HEX3[5] <= bin_to_dec_v2:bin2dec_sw1.port6
+HEX3[6] <= bin_to_dec_v2:bin2dec_sw1.port6
+HEX3[7] <= bin_to_dec_v2:bin2dec_sw1.port6
+HEX4[0] <= bin_to_dec_v2:bin2dec_sum.port5
+HEX4[1] <= bin_to_dec_v2:bin2dec_sum.port5
+HEX4[2] <= bin_to_dec_v2:bin2dec_sum.port5
+HEX4[3] <= bin_to_dec_v2:bin2dec_sum.port5
+HEX4[4] <= bin_to_dec_v2:bin2dec_sum.port5
+HEX4[5] <= bin_to_dec_v2:bin2dec_sum.port5
+HEX4[6] <= bin_to_dec_v2:bin2dec_sum.port5
+HEX4[7] <= bin_to_dec_v2:bin2dec_sum.port5
+HEX5[0] <= bin_to_dec_v2:bin2dec_sum.port6
+HEX5[1] <= bin_to_dec_v2:bin2dec_sum.port6
+HEX5[2] <= bin_to_dec_v2:bin2dec_sum.port6
+HEX5[3] <= bin_to_dec_v2:bin2dec_sum.port6
+HEX5[4] <= bin_to_dec_v2:bin2dec_sum.port6
+HEX5[5] <= bin_to_dec_v2:bin2dec_sum.port6
+HEX5[6] <= bin_to_dec_v2:bin2dec_sum.port6
+HEX5[7] <= bin_to_dec_v2:bin2dec_sum.port6
 
 
 |main|adder_4bit:add0
@@ -110,7 +126,7 @@ o_s[2] <= o_s.DB_MAX_OUTPUT_PORT_TYPE
 o_s[3] <= o_s.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|bin_to_dec_v2:bin2dec0
+|main|bin_to_dec_v2:bin2dec_sw0
 i_v3 => i_v3.IN3
 i_v2 => i_v2.IN3
 i_v1 => i_v1.IN3
@@ -134,7 +150,7 @@ o_seg1[6] <= circuit_B:circB.port1
 o_seg1[7] <= circuit_B:circB.port1
 
 
-|main|bin_to_dec_v2:bin2dec0|comparator:comp0
+|main|bin_to_dec_v2:bin2dec_sw0|comparator:comp0
 i_v3 => o_z.IN0
 i_v3 => o_z.IN0
 i_v2 => o_z.IN1
@@ -143,7 +159,7 @@ i_v0 => ~NO_FANOUT~
 o_z <= o_z.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|bin_to_dec_v2:bin2dec0|circuit_A_v2:circA
+|main|bin_to_dec_v2:bin2dec_sw0|circuit_A_v2:circA
 i_v3 => ~NO_FANOUT~
 i_v2 => ~NO_FANOUT~
 i_v1 => ~NO_FANOUT~
@@ -154,7 +170,7 @@ o_a2 <= <GND>
 o_a3 <= <GND>
 
 
-|main|bin_to_dec_v2:bin2dec0|circuit_B:circB
+|main|bin_to_dec_v2:bin2dec_sw0|circuit_B:circB
 i_z => o_seg[5].DATAIN
 i_z => o_seg[0].DATAIN
 i_z => o_seg[3].DATAIN
@@ -169,7 +185,7 @@ o_seg[6] <= <VCC>
 o_seg[7] <= <GND>
 
 
-|main|bin_to_dec_v2:bin2dec0|mux_2_1_1bit:mux3
+|main|bin_to_dec_v2:bin2dec_sw0|mux_2_1_1bit:mux3
 i_a => o_m.IN0
 i_b => o_m.IN0
 i_sel => o_m.IN1
@@ -177,7 +193,7 @@ i_sel => o_m.IN1
 o_m <= o_m.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|bin_to_dec_v2:bin2dec0|mux_2_1_1bit:mux2
+|main|bin_to_dec_v2:bin2dec_sw0|mux_2_1_1bit:mux2
 i_a => o_m.IN0
 i_b => o_m.IN0
 i_sel => o_m.IN1
@@ -185,7 +201,7 @@ i_sel => o_m.IN1
 o_m <= o_m.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|bin_to_dec_v2:bin2dec0|mux_2_1_1bit:mux1
+|main|bin_to_dec_v2:bin2dec_sw0|mux_2_1_1bit:mux1
 i_a => o_m.IN0
 i_b => o_m.IN0
 i_sel => o_m.IN1
@@ -193,7 +209,7 @@ i_sel => o_m.IN1
 o_m <= o_m.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|bin_to_dec_v2:bin2dec0|mux_2_1_1bit:mux0
+|main|bin_to_dec_v2:bin2dec_sw0|mux_2_1_1bit:mux0
 i_a => o_m.IN0
 i_b => o_m.IN0
 i_sel => o_m.IN1
@@ -201,7 +217,249 @@ i_sel => o_m.IN1
 o_m <= o_m.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|main|bin_to_dec_v2:bin2dec0|seg7_dec:seg0
+|main|bin_to_dec_v2:bin2dec_sw0|seg7_dec:seg0
+i_m3 => o_seg.IN0
+i_m2 => o_seg.IN0
+i_m2 => o_seg.IN0
+i_m2 => o_seg.IN1
+i_m2 => o_seg.IN0
+i_m1 => o_seg.IN1
+i_m1 => o_seg.IN0
+i_m1 => o_seg.IN1
+i_m1 => o_seg.IN1
+i_m1 => o_seg.IN1
+i_m0 => o_seg.IN1
+i_m0 => o_seg.IN1
+i_m0 => o_seg.IN1
+i_m0 => o_seg.IN1
+i_m0 => o_seg.IN1
+i_m0 => o_seg.IN1
+i_m0 => o_seg.IN1
+i_m0 => o_seg.IN1
+i_m0 => o_seg.IN1
+o_seg[0] <= o_seg.DB_MAX_OUTPUT_PORT_TYPE
+o_seg[1] <= o_seg.DB_MAX_OUTPUT_PORT_TYPE
+o_seg[2] <= o_seg.DB_MAX_OUTPUT_PORT_TYPE
+o_seg[3] <= o_seg.DB_MAX_OUTPUT_PORT_TYPE
+o_seg[4] <= o_seg.DB_MAX_OUTPUT_PORT_TYPE
+o_seg[5] <= o_seg.DB_MAX_OUTPUT_PORT_TYPE
+o_seg[6] <= o_seg.DB_MAX_OUTPUT_PORT_TYPE
+o_seg[7] <= <VCC>
+
+
+|main|bin_to_dec_v2:bin2dec_sw1
+i_v3 => i_v3.IN3
+i_v2 => i_v2.IN3
+i_v1 => i_v1.IN3
+i_v0 => i_v0.IN3
+i_cin => w_z.IN1
+o_seg0[0] <= seg7_dec:seg0.port4
+o_seg0[1] <= seg7_dec:seg0.port4
+o_seg0[2] <= seg7_dec:seg0.port4
+o_seg0[3] <= seg7_dec:seg0.port4
+o_seg0[4] <= seg7_dec:seg0.port4
+o_seg0[5] <= seg7_dec:seg0.port4
+o_seg0[6] <= seg7_dec:seg0.port4
+o_seg0[7] <= seg7_dec:seg0.port4
+o_seg1[0] <= circuit_B:circB.port1
+o_seg1[1] <= circuit_B:circB.port1
+o_seg1[2] <= circuit_B:circB.port1
+o_seg1[3] <= circuit_B:circB.port1
+o_seg1[4] <= circuit_B:circB.port1
+o_seg1[5] <= circuit_B:circB.port1
+o_seg1[6] <= circuit_B:circB.port1
+o_seg1[7] <= circuit_B:circB.port1
+
+
+|main|bin_to_dec_v2:bin2dec_sw1|comparator:comp0
+i_v3 => o_z.IN0
+i_v3 => o_z.IN0
+i_v2 => o_z.IN1
+i_v1 => o_z.IN1
+i_v0 => ~NO_FANOUT~
+o_z <= o_z.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|bin_to_dec_v2:bin2dec_sw1|circuit_A_v2:circA
+i_v3 => ~NO_FANOUT~
+i_v2 => ~NO_FANOUT~
+i_v1 => ~NO_FANOUT~
+i_v0 => ~NO_FANOUT~
+o_a0 <= <GND>
+o_a1 <= <GND>
+o_a2 <= <GND>
+o_a3 <= <GND>
+
+
+|main|bin_to_dec_v2:bin2dec_sw1|circuit_B:circB
+i_z => o_seg[5].DATAIN
+i_z => o_seg[0].DATAIN
+i_z => o_seg[3].DATAIN
+i_z => o_seg[4].DATAIN
+o_seg[0] <= i_z.DB_MAX_OUTPUT_PORT_TYPE
+o_seg[1] <= <GND>
+o_seg[2] <= <GND>
+o_seg[3] <= i_z.DB_MAX_OUTPUT_PORT_TYPE
+o_seg[4] <= i_z.DB_MAX_OUTPUT_PORT_TYPE
+o_seg[5] <= i_z.DB_MAX_OUTPUT_PORT_TYPE
+o_seg[6] <= <VCC>
+o_seg[7] <= <GND>
+
+
+|main|bin_to_dec_v2:bin2dec_sw1|mux_2_1_1bit:mux3
+i_a => o_m.IN0
+i_b => o_m.IN0
+i_sel => o_m.IN1
+i_sel => o_m.IN1
+o_m <= o_m.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|bin_to_dec_v2:bin2dec_sw1|mux_2_1_1bit:mux2
+i_a => o_m.IN0
+i_b => o_m.IN0
+i_sel => o_m.IN1
+i_sel => o_m.IN1
+o_m <= o_m.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|bin_to_dec_v2:bin2dec_sw1|mux_2_1_1bit:mux1
+i_a => o_m.IN0
+i_b => o_m.IN0
+i_sel => o_m.IN1
+i_sel => o_m.IN1
+o_m <= o_m.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|bin_to_dec_v2:bin2dec_sw1|mux_2_1_1bit:mux0
+i_a => o_m.IN0
+i_b => o_m.IN0
+i_sel => o_m.IN1
+i_sel => o_m.IN1
+o_m <= o_m.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|bin_to_dec_v2:bin2dec_sw1|seg7_dec:seg0
+i_m3 => o_seg.IN0
+i_m2 => o_seg.IN0
+i_m2 => o_seg.IN0
+i_m2 => o_seg.IN1
+i_m2 => o_seg.IN0
+i_m1 => o_seg.IN1
+i_m1 => o_seg.IN0
+i_m1 => o_seg.IN1
+i_m1 => o_seg.IN1
+i_m1 => o_seg.IN1
+i_m0 => o_seg.IN1
+i_m0 => o_seg.IN1
+i_m0 => o_seg.IN1
+i_m0 => o_seg.IN1
+i_m0 => o_seg.IN1
+i_m0 => o_seg.IN1
+i_m0 => o_seg.IN1
+i_m0 => o_seg.IN1
+i_m0 => o_seg.IN1
+o_seg[0] <= o_seg.DB_MAX_OUTPUT_PORT_TYPE
+o_seg[1] <= o_seg.DB_MAX_OUTPUT_PORT_TYPE
+o_seg[2] <= o_seg.DB_MAX_OUTPUT_PORT_TYPE
+o_seg[3] <= o_seg.DB_MAX_OUTPUT_PORT_TYPE
+o_seg[4] <= o_seg.DB_MAX_OUTPUT_PORT_TYPE
+o_seg[5] <= o_seg.DB_MAX_OUTPUT_PORT_TYPE
+o_seg[6] <= o_seg.DB_MAX_OUTPUT_PORT_TYPE
+o_seg[7] <= <VCC>
+
+
+|main|bin_to_dec_v2:bin2dec_sum
+i_v3 => i_v3.IN3
+i_v2 => i_v2.IN3
+i_v1 => i_v1.IN3
+i_v0 => i_v0.IN3
+i_cin => w_z.IN1
+o_seg0[0] <= seg7_dec:seg0.port4
+o_seg0[1] <= seg7_dec:seg0.port4
+o_seg0[2] <= seg7_dec:seg0.port4
+o_seg0[3] <= seg7_dec:seg0.port4
+o_seg0[4] <= seg7_dec:seg0.port4
+o_seg0[5] <= seg7_dec:seg0.port4
+o_seg0[6] <= seg7_dec:seg0.port4
+o_seg0[7] <= seg7_dec:seg0.port4
+o_seg1[0] <= circuit_B:circB.port1
+o_seg1[1] <= circuit_B:circB.port1
+o_seg1[2] <= circuit_B:circB.port1
+o_seg1[3] <= circuit_B:circB.port1
+o_seg1[4] <= circuit_B:circB.port1
+o_seg1[5] <= circuit_B:circB.port1
+o_seg1[6] <= circuit_B:circB.port1
+o_seg1[7] <= circuit_B:circB.port1
+
+
+|main|bin_to_dec_v2:bin2dec_sum|comparator:comp0
+i_v3 => o_z.IN0
+i_v3 => o_z.IN0
+i_v2 => o_z.IN1
+i_v1 => o_z.IN1
+i_v0 => ~NO_FANOUT~
+o_z <= o_z.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|bin_to_dec_v2:bin2dec_sum|circuit_A_v2:circA
+i_v3 => ~NO_FANOUT~
+i_v2 => ~NO_FANOUT~
+i_v1 => ~NO_FANOUT~
+i_v0 => ~NO_FANOUT~
+o_a0 <= <GND>
+o_a1 <= <GND>
+o_a2 <= <GND>
+o_a3 <= <GND>
+
+
+|main|bin_to_dec_v2:bin2dec_sum|circuit_B:circB
+i_z => o_seg[5].DATAIN
+i_z => o_seg[0].DATAIN
+i_z => o_seg[3].DATAIN
+i_z => o_seg[4].DATAIN
+o_seg[0] <= i_z.DB_MAX_OUTPUT_PORT_TYPE
+o_seg[1] <= <GND>
+o_seg[2] <= <GND>
+o_seg[3] <= i_z.DB_MAX_OUTPUT_PORT_TYPE
+o_seg[4] <= i_z.DB_MAX_OUTPUT_PORT_TYPE
+o_seg[5] <= i_z.DB_MAX_OUTPUT_PORT_TYPE
+o_seg[6] <= <VCC>
+o_seg[7] <= <GND>
+
+
+|main|bin_to_dec_v2:bin2dec_sum|mux_2_1_1bit:mux3
+i_a => o_m.IN0
+i_b => o_m.IN0
+i_sel => o_m.IN1
+i_sel => o_m.IN1
+o_m <= o_m.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|bin_to_dec_v2:bin2dec_sum|mux_2_1_1bit:mux2
+i_a => o_m.IN0
+i_b => o_m.IN0
+i_sel => o_m.IN1
+i_sel => o_m.IN1
+o_m <= o_m.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|bin_to_dec_v2:bin2dec_sum|mux_2_1_1bit:mux1
+i_a => o_m.IN0
+i_b => o_m.IN0
+i_sel => o_m.IN1
+i_sel => o_m.IN1
+o_m <= o_m.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|bin_to_dec_v2:bin2dec_sum|mux_2_1_1bit:mux0
+i_a => o_m.IN0
+i_b => o_m.IN0
+i_sel => o_m.IN1
+i_sel => o_m.IN1
+o_m <= o_m.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|bin_to_dec_v2:bin2dec_sum|seg7_dec:seg0
 i_m3 => o_seg.IN0
 i_m2 => o_seg.IN0
 i_m2 => o_seg.IN0

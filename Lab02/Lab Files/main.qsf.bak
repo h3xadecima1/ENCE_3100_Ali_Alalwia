@@ -436,4 +436,6 @@ set_global_assignment -name VERILOG_FILE convert_6bit_to_BCD.v
 set_global_assignment -name VERILOG_FILE bin6_to_bcd.v
 set_global_assignment -name VERILOG_FILE bcd7seg.v
 set_location_assignment PIN_P11 -to CLOCK_50
+set_global_assignment -name VERILOG_FILE b2b.v
+set_global_assignment -name VERILOG_FILE add3.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

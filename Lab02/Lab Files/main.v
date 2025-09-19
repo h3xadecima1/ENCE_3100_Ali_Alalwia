@@ -7,7 +7,9 @@ module main(
 	output	[7:0]		HEX0,
 	output	[7:0]		HEX1,
 	output	[7:0]		HEX2,
-	output   [7:0]    HEX3
+	output   [7:0]    HEX3,
+	output   [7:0]    HEX4,
+	output   [7:0]    HEX5
 );
 
 	// Part I
@@ -66,19 +68,25 @@ module main(
 	// Part IV
 	//******************
 	
-	
+	/*
 	wire [3:0] w_s;
-	wire w_cout;
-	
-	// adder_4bit ([3:0]i_a, [3:0]i_b, i_cin, o_cout, [3:0]o_s)
-	adder_4bit add0 (SW[3:0], SW[7:4], SW[8], w_cout, w_s);
-	
-	// bin_to_dec_v2 (i_v3, i_v2, i_v1, i_v0, i_cin, [7:0]o_seg0, [7:0]o_seg1)
-	bin_to_dec_v2 bin2dec0 (w_s[3], w_s[2], w_s[1], w_s[0], w_cout, HEX0, HEX1);
-	
-	// checkBCD ([3:0]i_a, [3:0]i_b, o_error)
-	checkBCD cb0 (SW[3:0], SW[7:4], LEDR[9]);
-	
+   wire w_cout;
+
+   // adder_4bit ([3:0]i_a, [3:0]i_b, i_cin, o_cout, [3:0]o_s)
+   adder_4bit add0 (SW[3:0], SW[7:4], SW[8], w_cout, w_s);
+
+   // Display SW[3:0] on HEX0–HEX1
+   bin_to_dec_v2 bin2dec_sw0 (SW[3], SW[2], SW[1], SW[0],1'b0,HEX0, HEX1);
+
+   // Display SW[7:4] on HEX2–HEX3
+   bin_to_dec_v2 bin2dec_sw1 (SW[7], SW[6], SW[5], SW[4],1'b0,HEX2, HEX3);
+ 
+   // Display adder result (w_s + carry) on HEX4–HEX5
+   bin_to_dec_v2 bin2dec_sum (w_s[3], w_s[2], w_s[1], w_s[0],w_cout,HEX4, HEX5);
+
+   // Error check
+   checkBCD cb0 (SW[3:0], SW[7:4], LEDR[9]);
+	/*
 	
 	//******************
 	
