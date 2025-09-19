@@ -1,0 +1,2 @@
+Info (10281): Verilog HDL Declaration information at main.v(28): object "a" differs only in case from object "A" in the same scope File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab_2_Template/main.v Line: 28
+Info (10281): Verilog HDL Declaration information at main.v(29): object "m" differs only in case from object "M" in the same scope File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab_2_Template/main.v Line: 29

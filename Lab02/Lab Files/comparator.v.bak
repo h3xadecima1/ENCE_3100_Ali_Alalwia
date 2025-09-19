@@ -1,0 +1,16 @@
+
+`default_nettype none
+
+module comparator(
+	input 	i_v3,
+	input 	i_v2,
+	input 	i_v1,
+	input 	i_v0,
+	output 	o_z
+);
+
+	// Combinational Logic only
+	// TODO
+
+endmodule
+

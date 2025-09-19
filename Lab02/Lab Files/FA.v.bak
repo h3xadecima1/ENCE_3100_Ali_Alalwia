@@ -1,0 +1,15 @@
+
+`default_nettype none
+
+module FA(
+	input 	i_a,
+	input 	i_b,
+	input 	i_cin,
+	output 	o_cout,
+	output 	o_s
+);
+
+	// Combinational Logic only
+	// TODO
+
+endmodule

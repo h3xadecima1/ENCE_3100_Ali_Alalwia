@@ -1,0 +1,12 @@
+
+`default_nettype none
+
+module circuit_B(
+	input 				i_z,
+	output	[7:0]		o_seg
+);
+	
+	// Combinational Logic only
+	// TODO
+
+endmodule

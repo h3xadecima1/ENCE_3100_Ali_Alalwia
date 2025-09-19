@@ -1,0 +1,13 @@
+
+`default_nettype none
+
+module checkBCD(
+	input  [3:0] i_a,
+	input  [3:0] i_b,
+	output o_error
+);
+
+	// Combinational Logic only
+	// TODO
+	
+endmodule

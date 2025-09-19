@@ -1,0 +1,15 @@
+
+`default_nettype none
+
+module adder_4bit(
+	input 	[3:0] 	i_a,
+	input 	[3:0] 	i_b,
+	input 				i_cin,
+	output 				o_cout,
+	output 	[3:0] 	o_s
+);
+
+	// Combinational Logic only
+	// TODO
+
+endmodule
