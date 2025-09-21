@@ -3,6 +3,7 @@
 
 module main(
 	input 	[9:0] 	SW,
+	input             CLOCK_50,
 	output 	[9:0] 	LEDR,
 	output	[7:0]		HEX0,
 	output	[7:0]		HEX1,
@@ -86,7 +87,7 @@ module main(
 
    // Error check
    checkBCD cb0 (SW[3:0], SW[7:4], LEDR[9]);
-	/*
+	*/
 	
 	//******************
 	
@@ -101,9 +102,48 @@ module main(
 	//******************
 	
 	// TODO
-	
+	/*
+    reg [3:0] A0 = 0, A1 = 0;
+    reg [3:0] B0 = 0, B1 = 0;
+
+    // Update selected bank continuously
+    always @(posedge CLOCK_50) begin
+        if (SW[9] == 1'b0) begin
+            A0 <= SW[3:0];
+            B0 <= SW[7:4];
+        end else begin
+            A1 <= SW[3:0];
+            B1 <= SW[7:4];
+        end
+    end
+
+    // ------------------------------------------------------------
+    // Two-digit adder (pseudo-code style)
+    // ------------------------------------------------------------
+    wire [3:0] S0, S1;
+    wire       S2;
+
+    bcd_add2_if adder (
+        .A0(A0), .A1(A1),
+        .B0(B0), .B1(B1),
+        .S0(S0), .S1(S1), .S2(S2)
+    );
+
+    // ------------------------------------------------------------
+    // Display mapping
+    // ------------------------------------------------------------
+    hex7seg d0 (.val(A0), .seg(HEX0)); // A0
+    hex7seg d1 (.val(A1), .seg(HEX1)); // A1
+    hex7seg d2 (.val(B0), .seg(HEX2)); // B0
+    hex7seg d3 (.val(B1), .seg(HEX3)); // B1
+    hex7seg d4 (.val(S0), .seg(HEX4)); // S0
+    hex7seg d5 (.val(S1), .seg(HEX5)); // S1
+
+    assign LEDR[9]   = S2;   // hundreds carry
+    assign LEDR[8:0] = 9'b0;
+
 	//******************
-	
+	*/
 	// Part VII (Mandatory for Graduate Students)
 	//******************
 	
