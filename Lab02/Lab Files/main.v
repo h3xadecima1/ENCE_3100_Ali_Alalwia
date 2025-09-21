@@ -103,22 +103,27 @@ module main(
 	
 	// TODO
 	/*
-    reg [3:0] A0 = 0, A1 = 0;
-    reg [3:0] B0 = 0, B1 = 0;
+	    wire [3:0] inA = SW[3:0];   // A nibble from switches
+    wire [3:0] inB = SW[7:4];   // B nibble from switches
 
-    // Update selected bank continuously
-    always @(posedge CLOCK_50) begin
+    reg [3:0] A0, A1, B0, B1;
+
+    always @* begin
         if (SW[9] == 1'b0) begin
-            A0 <= SW[3:0];
-            B0 <= SW[7:4];
+            A0 = inA;
+            B0 = inB;
+            A1 = 4'd0; // default if unused
+            B1 = 4'd0;
         end else begin
-            A1 <= SW[3:0];
-            B1 <= SW[7:4];
+            A1 = inA;
+            B1 = inB;
+            A0 = 4'd0; // default if unused
+            B0 = 4'd0;
         end
     end
 
     // ------------------------------------------------------------
-    // Two-digit adder (pseudo-code style)
+    // Two-digit BCD adder (pseudo-code style, with if/else)
     // ------------------------------------------------------------
     wire [3:0] S0, S1;
     wire       S2;
@@ -130,20 +135,21 @@ module main(
     );
 
     // ------------------------------------------------------------
-    // Display mapping
+    // Display digits
     // ------------------------------------------------------------
-    hex7seg d0 (.val(A0), .seg(HEX0)); // A0
-    hex7seg d1 (.val(A1), .seg(HEX1)); // A1
-    hex7seg d2 (.val(B0), .seg(HEX2)); // B0
-    hex7seg d3 (.val(B1), .seg(HEX3)); // B1
-    hex7seg d4 (.val(S0), .seg(HEX4)); // S0
-    hex7seg d5 (.val(S1), .seg(HEX5)); // S1
+    seg7_dec h0 (.i_m3(A0[3]), .i_m2(A0[2]), .i_m1(A0[1]), .i_m0(A0[0]), .o_seg(HEX0)); // A0
+    seg7_dec h1 (.i_m3(A1[3]), .i_m2(A1[2]), .i_m1(A1[1]), .i_m0(A1[0]), .o_seg(HEX1)); // A1
+    seg7_dec h2 (.i_m3(B0[3]), .i_m2(B0[2]), .i_m1(B0[1]), .i_m0(B0[0]), .o_seg(HEX2)); // B0
+    seg7_dec h3 (.i_m3(B1[3]), .i_m2(B1[2]), .i_m1(B1[1]), .i_m0(B1[0]), .o_seg(HEX3)); // B1
+    seg7_dec h4 (.i_m3(S0[3]), .i_m2(S0[2]), .i_m1(S0[1]), .i_m0(S0[0]), .o_seg(HEX4)); // S0
+    seg7_dec h5 (.i_m3(S1[3]), .i_m2(S1[2]), .i_m1(S1[1]), .i_m0(S1[0]), .o_seg(HEX5)); // S1
 
     assign LEDR[9]   = S2;   // hundreds carry
     assign LEDR[8:0] = 9'b0;
+	 */
 
 	//******************
-	*/
+	
 	// Part VII (Mandatory for Graduate Students)
 	//******************
 	
