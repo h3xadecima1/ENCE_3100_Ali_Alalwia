@@ -95,7 +95,30 @@ module main(
 	//******************
 	
 	// TODO
-	
+	/*
+    wire [3:0] A0, B0;
+    wire [3:0] A1, B1;
+    wire [3:0] S0, S1, S2;
+
+    // Assign digits from switches
+    assign A0 = SW[3:0];          // A ones digit (0–9)
+    assign B0 = SW[7:4];          // B ones digit (0–9)
+    assign A1 = {3'b000, SW[8]};  // A tens digit (0 or 1)
+    assign B1 = {3'b000, SW[9]};  // B tens digit (0 or 1)
+
+    // Instantiate two-digit BCD adder
+    bcd_2digit_adder ADD (A0, A1, B0, B1, S0, S1, S2);
+
+    // Display inputs
+    hex7seg h5 (A1, HEX5);        // tens of A
+    hex7seg h4 (A0, HEX4);        // ones of A
+    hex7seg h3 (B1, HEX3);        // tens of B
+
+    // Display sum
+    hex7seg h2 (S2, HEX2);        // hundreds digit of sum
+    hex7seg h1 (S1, HEX1);        // tens digit of sum
+    hex7seg h0 (S0, HEX0);        // ones digit of sum
+	 */
 	//******************
 	
 	// Part VI
@@ -154,7 +177,34 @@ module main(
 	//******************
 	
 	// TODO
-	
-	//******************
+	/*
+	 wire [5:0] bin = SW[5:0];  // 0..63
 
+    // Combinational binary->BCD using simple arithmetic
+    // (synthesizes to LUTs/adders on FPGA)
+    wire [3:0] tens = bin / 6'd10;   // 0..6
+    wire [3:0] ones = bin - tens*6'd10;
+
+    // 7-seg drivers
+    assign HEX1 = seg_of(tens);
+    assign HEX0 = seg_of(ones);
+
+    // Common 7-seg decoder for digits 0..9 (active-low)
+    function [6:0] seg_of (input [3:0] d);
+        case (d)
+            4'd0: seg_of = 7'b100_0000;
+            4'd1: seg_of = 7'b111_1001;
+            4'd2: seg_of = 7'b010_0100;
+            4'd3: seg_of = 7'b011_0000;
+            4'd4: seg_of = 7'b001_1001;
+            4'd5: seg_of = 7'b001_0010;
+            4'd6: seg_of = 7'b000_0010;
+            4'd7: seg_of = 7'b111_1000;
+            4'd8: seg_of = 7'b000_0000;
+            4'd9: seg_of = 7'b001_0000;
+            default: seg_of = 7'b111_1111; // blank for >9 (won’t happen)
+        endcase
+    endfunction
+	 */
+	//******************
 endmodule

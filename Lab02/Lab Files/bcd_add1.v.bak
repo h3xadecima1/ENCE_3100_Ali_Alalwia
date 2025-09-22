@@ -1,0 +1,11 @@
+module bcd_add1(
+    input  [3:0] a, b,
+    input        cin,
+    output [3:0] sum,
+    output       cout
+);
+    wire [4:0] t = a + b + cin;         // 0..19
+    wire       ge10 = t > 5'd9;
+    assign {cout, sum} = ge10 ? {1'b1, (t + 5'd6)[3:0]}  // +6 to correct BCD
+                             : {1'b0, t[3:0]};
+endmodule

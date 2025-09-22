@@ -1,5 +1,5 @@
 Analysis & Synthesis report for main
-Sun Sep 21 04:32:37 2025
+Sun Sep 21 20:17:50 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -14,9 +14,11 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  9. Port Connectivity Checks: "bcd_2digit_adder:ADD|bcd_adder:U0"
+ 10. Port Connectivity Checks: "bcd_2digit_adder:ADD"
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -43,13 +45,13 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Sep 21 04:32:37 2025           ;
+; Analysis & Synthesis Status        ; Successful - Sun Sep 21 20:17:50 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; main                                            ;
 ; Top-level Entity Name              ; main                                            ;
 ; Family                             ; MAX 10                                          ;
-; Total logic elements               ; 91                                              ;
-;     Total combinational functions  ; 91                                              ;
+; Total logic elements               ; 28                                              ;
+;     Total combinational functions  ; 28                                              ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
 ; Total pins                         ; 69                                              ;
@@ -164,63 +166,62 @@ on the Quartus Prime software download page.
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                     ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                       ; Library ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------+---------+
-; main.v                           ; yes             ; User Verilog HDL File  ; C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v        ;         ;
-; seg7_dec.v                       ; yes             ; User Verilog HDL File  ; C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/seg7_dec.v    ;         ;
-; bcd_add2_if.v                    ; yes             ; User Verilog HDL File  ; C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/bcd_add2_if.v ;         ;
-+----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                            ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------+---------+
+; main.v                           ; yes             ; User Verilog HDL File  ; C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v             ;         ;
+; BCD_Adder.v                      ; yes             ; User Verilog HDL File  ; C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/BCD_Adder.v        ;         ;
+; hex7seg.v                        ; yes             ; User Verilog HDL File  ; C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/hex7seg.v          ;         ;
+; bcd_2digit_adder.v               ; yes             ; User Verilog HDL File  ; C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/bcd_2digit_adder.v ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 91          ;
-;                                             ;             ;
-; Total combinational functions               ; 91          ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 49          ;
-;     -- 3 input functions                    ; 21          ;
-;     -- <=2 input functions                  ; 21          ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 82          ;
-;     -- arithmetic mode                      ; 9           ;
-;                                             ;             ;
-; Total registers                             ; 0           ;
-;     -- Dedicated logic registers            ; 0           ;
-;     -- I/O registers                        ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 69          ;
-;                                             ;             ;
-; Embedded Multiplier 9-bit elements          ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; SW[9]~input ;
-; Maximum fan-out                             ; 51          ;
-; Total fan-out                               ; 409         ;
-; Average fan-out                             ; 1.79        ;
-+---------------------------------------------+-------------+
++----------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                            ;
++---------------------------------------------+------------------------------------------+
+; Resource                                    ; Usage                                    ;
++---------------------------------------------+------------------------------------------+
+; Estimated Total logic elements              ; 28                                       ;
+;                                             ;                                          ;
+; Total combinational functions               ; 28                                       ;
+; Logic element usage by number of LUT inputs ;                                          ;
+;     -- 4 input functions                    ; 21                                       ;
+;     -- 3 input functions                    ; 5                                        ;
+;     -- <=2 input functions                  ; 2                                        ;
+;                                             ;                                          ;
+; Logic elements by mode                      ;                                          ;
+;     -- normal mode                          ; 24                                       ;
+;     -- arithmetic mode                      ; 4                                        ;
+;                                             ;                                          ;
+; Total registers                             ; 0                                        ;
+;     -- Dedicated logic registers            ; 0                                        ;
+;     -- I/O registers                        ; 0                                        ;
+;                                             ;                                          ;
+; I/O pins                                    ; 69                                       ;
+;                                             ;                                          ;
+; Embedded Multiplier 9-bit elements          ; 0                                        ;
+;                                             ;                                          ;
+; Maximum fan-out node                        ; bcd_2digit_adder:ADD|bcd_adder:U0|Add0~0 ;
+; Maximum fan-out                             ; 8                                        ;
+; Total fan-out                               ; 198                                      ;
+; Average fan-out                             ; 1.19                                     ;
++---------------------------------------------+------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name     ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------+-------------+--------------+
-; |main                      ; 91 (16)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 69   ; 0            ; 0          ; |main                   ; main        ; work         ;
-;    |bcd_add2_if:adder|     ; 17 (17)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|bcd_add2_if:adder ; bcd_add2_if ; work         ;
-;    |seg7_dec:h0|           ; 11 (11)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|seg7_dec:h0       ; seg7_dec    ; work         ;
-;    |seg7_dec:h1|           ; 10 (10)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|seg7_dec:h1       ; seg7_dec    ; work         ;
-;    |seg7_dec:h2|           ; 11 (11)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|seg7_dec:h2       ; seg7_dec    ; work         ;
-;    |seg7_dec:h3|           ; 10 (10)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|seg7_dec:h3       ; seg7_dec    ; work         ;
-;    |seg7_dec:h4|           ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|seg7_dec:h4       ; seg7_dec    ; work         ;
-;    |seg7_dec:h5|           ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|seg7_dec:h5       ; seg7_dec    ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-------------------------+-------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                     ; Entity Name      ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------+------------------+--------------+
+; |main                      ; 28 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 69   ; 0            ; 0          ; |main                                   ; main             ; work         ;
+;    |bcd_2digit_adder:ADD|  ; 9 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|bcd_2digit_adder:ADD              ; bcd_2digit_adder ; work         ;
+;       |bcd_adder:U0|       ; 9 (9)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|bcd_2digit_adder:ADD|bcd_adder:U0 ; bcd_adder        ; work         ;
+;    |hex7seg:h0|            ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|hex7seg:h0                        ; hex7seg          ; work         ;
+;    |hex7seg:h1|            ; 5 (5)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|hex7seg:h1                        ; hex7seg          ; work         ;
+;    |hex7seg:h4|            ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|hex7seg:h4                        ; hex7seg          ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -239,24 +240,43 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++---------------------------------------------------------------+
+; Port Connectivity Checks: "bcd_2digit_adder:ADD|bcd_adder:U0" ;
++------+-------+----------+-------------------------------------+
+; Port ; Type  ; Severity ; Details                             ;
++------+-------+----------+-------------------------------------+
+; Cin  ; Input ; Info     ; Stuck at GND                        ;
++------+-------+----------+-------------------------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "bcd_2digit_adder:ADD" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; A1[3..1] ; Input ; Info     ; Stuck at GND       ;
+; B1[3..1] ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 69                          ;
-; cycloneiii_lcell_comb ; 109                         ;
-;     arith             ; 9                           ;
-;         3 data inputs ; 9                           ;
-;     normal            ; 100                         ;
-;         0 data inputs ; 4                           ;
-;         1 data inputs ; 16                          ;
-;         2 data inputs ; 19                          ;
-;         3 data inputs ; 12                          ;
-;         4 data inputs ; 49                          ;
+; cycloneiii_lcell_comb ; 33                          ;
+;     arith             ; 4                           ;
+;         3 data inputs ; 4                           ;
+;     normal            ; 29                          ;
+;         0 data inputs ; 3                           ;
+;         1 data inputs ; 3                           ;
+;         2 data inputs ; 1                           ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 21                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 7.80                        ;
-; Average LUT depth     ; 4.75                        ;
+; Max LUT depth         ; 4.40                        ;
+; Average LUT depth     ; 3.32                        ;
 +-----------------------+-----------------------------+
 
 
@@ -275,7 +295,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Sun Sep 21 04:32:25 2025
+    Info: Processing started: Sun Sep 21 20:17:35 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off main -c main
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -310,17 +330,25 @@ Warning (12019): Can't analyze file -- file bin6_to_bcd.v is missing
 Warning (12019): Can't analyze file -- file bcd7seg.v is missing
 Warning (12019): Can't analyze file -- file b2b.v is missing
 Warning (12019): Can't analyze file -- file add3.v is missing
-Warning (12019): Can't analyze file -- file BCD_Adder.v is missing
+Info (12021): Found 1 design units, including 1 entities, in source file bcd_adder.v
+    Info (12023): Found entity 1: bcd_adder File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/BCD_Adder.v Line: 1
 Warning (12019): Can't analyze file -- file TwoDigit_BCD_Adder.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file bcd_add2_if.v
     Info (12023): Found entity 1: bcd_add2_if File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/bcd_add2_if.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file hex7seg.v
     Info (12023): Found entity 1: hex7seg File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/hex7seg.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file bcd_add1.v
+    Info (12023): Found entity 1: bcd_add1 File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/bcd_add1.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file seg7.v
+    Info (12023): Found entity 1: seg7 File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/seg7.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file bcd_2digit_adder.v
+    Info (12023): Found entity 1: bcd_2digit_adder File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/bcd_2digit_adder.v Line: 1
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Info (12128): Elaborating entity "bcd_add2_if" for hierarchy "bcd_add2_if:adder" File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 134
-Warning (10230): Verilog HDL assignment warning at bcd_add2_if.v(19): truncated value with size 5 to match size of target (4) File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/bcd_add2_if.v Line: 19
-Warning (10230): Verilog HDL assignment warning at bcd_add2_if.v(28): truncated value with size 5 to match size of target (4) File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/bcd_add2_if.v Line: 28
-Info (12128): Elaborating entity "seg7_dec" for hierarchy "seg7_dec:h0" File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 139
+Warning (10034): Output port "LEDR" at main.v(7) has no driver File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 7
+Info (12128): Elaborating entity "bcd_2digit_adder" for hierarchy "bcd_2digit_adder:ADD" File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 109
+Info (12128): Elaborating entity "bcd_adder" for hierarchy "bcd_2digit_adder:ADD|bcd_adder:U0" File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/bcd_2digit_adder.v Line: 8
+Warning (10230): Verilog HDL assignment warning at BCD_Adder.v(12): truncated value with size 32 to match size of target (5) File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/BCD_Adder.v Line: 12
+Info (12128): Elaborating entity "hex7seg" for hierarchy "hex7seg:h5" File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 112
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 7
     Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 7
@@ -331,11 +359,26 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 7
     Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 7
     Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 7
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 7
     Warning (13410): Pin "HEX0[7]" is stuck at VCC File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 8
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 9
     Warning (13410): Pin "HEX1[7]" is stuck at VCC File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 9
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 10
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 10
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 10
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 10
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 10
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 10
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 10
     Warning (13410): Pin "HEX2[7]" is stuck at VCC File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 10
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 11
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 11
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 11
     Warning (13410): Pin "HEX3[7]" is stuck at VCC File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 11
     Warning (13410): Pin "HEX4[7]" is stuck at VCC File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 12
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 14
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 14
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 14
     Warning (13410): Pin "HEX5[7]" is stuck at VCC File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 14
 Info (286030): Timing-Driven Synthesis is running
 Warning (20013): Ignored 24 assignments for entity "DE10_LITE_Golden_Top" -- entity does not exist in design
@@ -365,17 +408,16 @@ Warning (20013): Ignored 24 assignments for entity "DE10_LITE_Golden_Top" -- ent
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE10_LITE_Golden_Top -section_id Top was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 2 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 5
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/Users/S0l1d/01- Advanced DD/QuartusLite/DE10_Board/Projects/Lab02/main.v Line: 6
-Info (21057): Implemented 160 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 97 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 11 input pins
     Info (21059): Implemented 58 output pins
-    Info (21061): Implemented 91 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 58 warnings
+    Info (21061): Implemented 28 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 71 warnings
     Info: Peak virtual memory: 4798 megabytes
-    Info: Processing ended: Sun Sep 21 04:32:37 2025
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:30
+    Info: Processing ended: Sun Sep 21 20:17:50 2025
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:20
 
 

@@ -1,0 +1,15 @@
+module bcd_2digit_adder (
+    input  [3:0] A0, A1, B0, B1,
+    output [3:0] S0, S1, S2
+);
+    wire c1, c2;
+
+    // Ones digit
+    bcd_adder U0 (A0, B0, 1'b0, S0, c1);
+
+    // Tens digit + carry
+    bcd_adder U1 (A1, B1, c1, S1, c2);
+
+    // Hundreds digit (carry only)
+    assign S2 = {3'b000, c2};
+endmodule
