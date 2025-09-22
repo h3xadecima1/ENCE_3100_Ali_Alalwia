@@ -59,10 +59,34 @@ module main(
 	
 	/*
 	//FA fa0 (SW[0], SW[1], SW[2], LEDR[1], LEDR[0]);  // test FA first
-	
-	//adder_4bit ([3:0]i_a, [3:0]i_b, i_cin, o_cout, [3:0]o_s)
-	adder_4bit ad0 (SW[3:0], SW[7:4], SW[8], LEDR[4], LEDR[3:0]);
-	*/
+	// Assign inputs
+    wire [3:0] A = SW[3:0];   // A from SW0–3
+    wire [3:0] B = SW[7:4];   // B from SW4–7
+    wire Cin   = SW[8];       // Carry-in
+    wire [3:0] S;             // Sum (4-bit)
+    wire Cout;                // Carry-out
+
+    // Instantiate ripple-carry adder
+    fulladder_4bit U0 (.A(A), .B(B), .Cin(Cin), .Sum(S), .Cout(Cout));
+
+    // Show inputs on LEDs
+    assign LEDR[3:0] = A;     // A
+    assign LEDR[7:4] = B;     // B
+    assign LEDR[8]   = Cin;   // Cin
+    assign LEDR[9]   = Cout;  // Carry-out
+
+    // Combine result = CoutS3..S0 (0–31)
+    wire [4:0] result = {Cout, S};
+
+    // Convert to decimal digits
+    wire [3:0] tens = result / 10;
+    wire [3:0] ones = result % 10;
+
+    // Drive HEX displays
+    hex7seg2 h0 (.in(ones), .seg(HEX0));  // ones digit
+    hex7seg2 h1 (.in(tens), .seg(HEX1));  // tens digit
+
+	 */
 	
 	//******************
 	
@@ -178,33 +202,18 @@ module main(
 	
 	// TODO
 	/*
-	 wire [5:0] bin = SW[5:0];  // 0..63
+	 wire [5:0] bin = SW[5:0];  // binary input (0–63)
+    wire [3:0] tens;
+    wire [3:0] ones;
 
-    // Combinational binary->BCD using simple arithmetic
-    // (synthesizes to LUTs/adders on FPGA)
-    wire [3:0] tens = bin / 6'd10;   // 0..6
-    wire [3:0] ones = bin - tens*6'd10;
+    // Convert binary to decimal digits
+    assign tens = bin / 10;
+    assign ones = bin % 10;
 
-    // 7-seg drivers
-    assign HEX1 = seg_of(tens);
-    assign HEX0 = seg_of(ones);
-
-    // Common 7-seg decoder for digits 0..9 (active-low)
-    function [6:0] seg_of (input [3:0] d);
-        case (d)
-            4'd0: seg_of = 7'b100_0000;
-            4'd1: seg_of = 7'b111_1001;
-            4'd2: seg_of = 7'b010_0100;
-            4'd3: seg_of = 7'b011_0000;
-            4'd4: seg_of = 7'b001_1001;
-            4'd5: seg_of = 7'b001_0010;
-            4'd6: seg_of = 7'b000_0010;
-            4'd7: seg_of = 7'b111_1000;
-            4'd8: seg_of = 7'b000_0000;
-            4'd9: seg_of = 7'b001_0000;
-            default: seg_of = 7'b111_1111; // blank for >9 (won’t happen)
-        endcase
-    endfunction
+    // Drive 7-segment displays
+    hex7seg h0 (ones, HEX0);   // ones digit
+    hex7seg h1 (tens, HEX1);   // tens digit
 	 */
+	 
 	//******************
 endmodule
