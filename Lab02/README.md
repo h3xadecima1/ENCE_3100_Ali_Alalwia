@@ -1,4 +1,4 @@
-# Lab 2 – Numbers and Displays (Verilog on DE10-Lite)
+# Lab 2 (Verilog on DE10-Lite)
 
 ## Overview
 This lab explores **combinational logic design** using Verilog on the DE10-Lite FPGA.  
@@ -41,7 +41,7 @@ module seg7_dec(
 endmodule
 ```
 
-📷 *Insert image of board showing switches mapped to HEX displays*
+<img src="img/1.gif" alt="APart1" width="500"/>
 
 ---
 
@@ -58,7 +58,7 @@ bin_to_dec b2d (
 );
 ```
 
-📷 *Insert simulation waveform and board test image*
+<img src="img/2.gif" alt="Part2" width="500"/>
 
 ---
 
@@ -82,8 +82,8 @@ module adder_4bit(input [3:0] i_a, i_b, input i_cin,
 endmodule
 ```
 
-📷 *Insert schematic of ripple-carry adder*  
-📷 *Insert DE10-Lite board with sum displayed*
+<img src="img/3.gif" alt="Part3" width="500"/>
+
 
 ---
 
@@ -111,7 +111,8 @@ module bcd_adder(
 endmodule
 ```
 
-📷 *Insert waveform and FPGA test photo*
+<img src="img/4.gif" alt="Part4" width="500"/>
+
 
 ---
 
@@ -132,7 +133,8 @@ module bcd_2digit_adder(
 endmodule
 ```
 
-📷 *Insert board photo with A+B displayed on HEX displays*
+<img src="img/5.gif" alt="Part5" width="500"/>
+
 
 ---
 
@@ -162,7 +164,8 @@ always @(*) begin
 end
 ```
 
-📷 *Insert RTL schematic screenshot from Quartus*
+<img src="img/6.gif" alt="Part6" width="500"/>
+
 
 ---
 
@@ -186,7 +189,8 @@ hex7seg h1(tens, HEX1);
 - SW = `010101` (21 decimal) → HEX1=2, HEX0=1  
 - SW = `111111` (63 decimal) → HEX1=6, HEX0=3  
 
-📷 *Insert DE10-Lite board photo with binary-to-BCD conversion*
+<img src="img/7.gif" alt="Part7" width="500"/>
+
 
 ---
 
@@ -206,11 +210,4 @@ hex7seg h1(tens, HEX1);
 5. Compile & program FPGA.  
 6. Toggle switches and observe HEX outputs.  
 
----
-
-## 📷 Figures
-Add images into `/images` folder and link like this:
-
-```markdown
-![Part VII: Binary to BCD Conversion](images/part7_binary_to_bcd.jpg)
 ```
