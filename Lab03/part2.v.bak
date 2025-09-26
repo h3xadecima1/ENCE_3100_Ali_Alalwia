@@ -1,0 +1,22 @@
+// d_latch_keep.v — Gated D latch with preserved internal nodes
+module d_latch_keep(input D, input Clk, output Q);
+  wire S_g, R_g, Qa, Qb /* synthesis keep */;
+  assign S_g =  D & Clk;
+  assign R_g = ~D & Clk;
+  assign Qa  = ~(R_g | Qb);
+  assign Qb  = ~(S_g | Qa);
+  assign Q   = Qa;
+endmodule
+
+// top_part2.v — Map D=SW[0], Clk=KEY[0], Q->LEDR[0]
+module top_part2(
+  input  [9:0] SW,
+  input  [1:0] KEY,
+  output [9:0] LEDR
+);
+  wire Clk = ~KEY[0];
+  wire Q;
+  d_latch_keep u(.D(SW[0]), .Clk(Clk), .Q(Q));
+  assign LEDR[0] = Q;
+  assign LEDR[9:1] = 0;
+endmodule
