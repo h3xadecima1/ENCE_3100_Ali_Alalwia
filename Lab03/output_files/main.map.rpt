@@ -1,5 +1,5 @@
 Analysis & Synthesis report for main
-Thu Sep 25 22:15:37 2025
+Mon Sep 29 16:36:42 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -43,7 +43,7 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Sep 25 22:15:36 2025           ;
+; Analysis & Synthesis Status        ; Successful - Mon Sep 29 16:36:42 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; main                                            ;
 ; Top-level Entity Name              ; main                                            ;
@@ -268,14 +268,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Thu Sep 25 22:15:26 2025
+    Info: Processing started: Mon Sep 29 16:36:35 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off main -c main
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file main.v
     Info (12023): Found entity 1: main File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab03/main.v Line: 2
-Info (12021): Found 1 design units, including 1 entities, in source file part1.v
-    Info (12023): Found entity 1: part1 File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab03/part1.v Line: 2
+Warning (12019): Can't analyze file -- file part1.v is missing
 Warning (12019): Can't analyze file -- file part2.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file d_latch_keep.v
     Info (12023): Found entity 1: d_latch_keep File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab03/d_latch_keep.v Line: 2
@@ -289,8 +288,12 @@ Info (12021): Found 1 design units, including 1 entities, in source file dff_neg
     Info (12023): Found entity 1: dff_negedge File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab03/dff_negedge.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file seg7.v
     Info (12023): Found entity 1: seg7 File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab03/seg7.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file part1_gate.v
+    Info (12023): Found entity 1: part1_gate File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab03/part1_gate.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file part1_expr.v
+    Info (12023): Found entity 1: part1_expr File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab03/part1_expr.v Line: 2
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Info (12128): Elaborating entity "seg7" for hierarchy "seg7:h0" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab03/main.v Line: 70
+Info (12128): Elaborating entity "seg7" for hierarchy "seg7:h0" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab03/main.v Line: 69
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab03/main.v Line: 5
     Warning (13410): Pin "HEX0[7]" is stuck at VCC File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab03/main.v Line: 6
@@ -329,10 +332,10 @@ Info (21057): Implemented 76 device resources after synthesis - the final resour
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 26 output pins
     Info (21061): Implemented 38 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 33 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 34 warnings
     Info: Peak virtual memory: 4798 megabytes
-    Info: Processing ended: Thu Sep 25 22:15:37 2025
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:29
+    Info: Processing ended: Mon Sep 29 16:36:42 2025
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:19
 
 

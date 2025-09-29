@@ -6,21 +6,21 @@ module main (
 	 output [7:0] HEX0, HEX1
 	 
 );
-    // Invert KEY0 since it is active-low
+  wire Clk = ~KEY[0];
 
     // Part1
 	 /*
-	 wire Clk = SW[0];
-    part1 u_latch (
-        .Clk(Clk),
-        .R  (SW[1]),
-        .S  (SW[2]),
-        .Q  (LEDR[0])
-    );
+  wire Q_gate, Q_expr;
+
+  sr_latch u0(.Clk(Clk), .R(SW[0]), .S(SW[1]), .Q(Q_gate));
+
+  assign LEDR[0] = Q_gate;
+  assign LEDR[9:2] = 0;
 	 */
+	 
+	 
 	 // Part2
-	 /*
-  wire Clk = ~KEY[0];
+	/* 
   wire Q;
   d_latch_keep u(.D(SW[0]), .Clk(Clk), .Q(Q));
   assign LEDR[0] = Q;
@@ -29,16 +29,15 @@ module main (
   
   // Part3
   /*
-  wire Clk = ~KEY[0];
   wire Q;
   ms_dff u(.D(SW[0]), .Clk(Clk), .Q(Q));
   assign LEDR[0] = Q;
   assign LEDR[9:1] = 0;
   */
+  
   // Part4
   /*
   wire D   = SW[0];
-  wire Clk = ~KEY[0];
   wire rst_n = KEY[1];
 
   wire Qa, Qb, Qc;
@@ -53,8 +52,7 @@ module main (
   */
   //Part5
   /*
-   wire rst_n = KEY[0];
-   wire Clk   = ~KEY[1];     // make a press into a rising edge clock
+   wire rst_n = KEY[1];
 
   reg [7:0] A, B;
   always @(posedge Clk or negedge rst_n) begin

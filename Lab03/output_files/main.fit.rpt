@@ -1,5 +1,5 @@
 Fitter report for main
-Thu Sep 25 22:15:45 2025
+Mon Sep 29 16:36:49 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -66,7 +66,7 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Thu Sep 25 22:15:45 2025           ;
+; Fitter Status                      ; Successful - Mon Sep 29 16:36:49 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; main                                            ;
 ; Top-level Entity Name              ; main                                            ;
@@ -152,12 +152,12 @@ on the Quartus Prime software download page.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 1.11        ;
+; Average used               ; 1.06        ;
 ; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-16        ;   0.7%      ;
+;     Processors 2-16        ;   0.4%      ;
 +----------------------------+-------------+
 
 
@@ -570,11 +570,11 @@ The pin-out file can be found in C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_
 ; Oscillator blocks                           ; 0 / 1 ( 0 % )         ;
 ; Impedance control blocks                    ; 0 / 1 ( 0 % )         ;
 ; Average interconnect usage (total/H/V)      ; 0.1% / 0.1% / 0.0%    ;
-; Peak interconnect usage (total/H/V)         ; 0.7% / 0.9% / 0.6%    ;
+; Peak interconnect usage (total/H/V)         ; 0.8% / 1.1% / 0.4%    ;
 ; Maximum fan-out                             ; 25                    ;
 ; Highest non-global fan-out                  ; 25                    ;
-; Total fan-out                               ; 220                   ;
-; Average fan-out                             ; 1.59                  ;
+; Total fan-out                               ; 218                   ;
+; Average fan-out                             ; 1.60                  ;
 +---------------------------------------------+-----------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
@@ -623,7 +623,7 @@ The pin-out file can be found in C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_
 ;     -- Registered Output Connections        ; 0                    ; 0                              ;
 ;                                             ;                      ;                                ;
 ; Internal Connections                        ;                      ;                                ;
-;     -- Total Connections                    ; 226                  ; 8                              ;
+;     -- Total Connections                    ; 224                  ; 8                              ;
 ;     -- Registered Connections               ; 16                   ; 0                              ;
 ;                                             ;                      ;                                ;
 ; External Connections                        ;                      ;                                ;
@@ -1272,8 +1272,8 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 ; SW[6]    ; Incomplete set of assignments ;
 ; SW[7]    ; Incomplete set of assignments ;
 ; SW[9]    ; Incomplete set of assignments ;
-; KEY[1]   ; Incomplete set of assignments ;
 ; KEY[0]   ; Incomplete set of assignments ;
+; KEY[1]   ; Incomplete set of assignments ;
 +----------+-------------------------------+
 
 
@@ -1323,15 +1323,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HEX1[7] ; Output   ; --            ; --            ; --                    ; --  ; --   ;
 ; SW[0]   ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
 ; SW[1]   ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
-; SW[2]   ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
+; SW[2]   ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
 ; SW[3]   ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
 ; SW[4]   ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
 ; SW[5]   ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
 ; SW[6]   ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
 ; SW[7]   ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
 ; SW[9]   ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
-; KEY[1]  ; Input    ; (0) 0 ps      ; --            ; --                    ; --  ; --   ;
-; KEY[0]  ; Input    ; (6) 868 ps    ; --            ; --                    ; --  ; --   ;
+; KEY[0]  ; Input    ; --            ; (0) 0 ps      ; --                    ; --  ; --   ;
+; KEY[1]  ; Input    ; --            ; (6) 868 ps    ; --                    ; --  ; --   ;
 +---------+----------+---------------+---------------+-----------------------+-----+------+
 
 
@@ -1342,17 +1342,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-------------------+---------+
 ; SW[8]                 ;                   ;         ;
 ; SW[0]                 ;                   ;         ;
+;      - B[0]           ; 1                 ; 6       ;
 ;      - A[0]           ; 1                 ; 6       ;
 ;      - LEDR[0]~output ; 1                 ; 6       ;
-;      - B[0]~feeder    ; 1                 ; 6       ;
 ; SW[1]                 ;                   ;         ;
+;      - B[1]           ; 0                 ; 6       ;
 ;      - A[1]           ; 0                 ; 6       ;
 ;      - LEDR[1]~output ; 0                 ; 6       ;
-;      - B[1]~feeder    ; 0                 ; 6       ;
 ; SW[2]                 ;                   ;         ;
-;      - B[2]           ; 0                 ; 6       ;
-;      - A[2]           ; 0                 ; 6       ;
-;      - LEDR[2]~output ; 0                 ; 6       ;
+;      - B[2]           ; 1                 ; 6       ;
+;      - A[2]           ; 1                 ; 6       ;
+;      - LEDR[2]~output ; 1                 ; 6       ;
 ; SW[3]                 ;                   ;         ;
 ;      - A[3]           ; 1                 ; 6       ;
 ;      - LEDR[3]~output ; 1                 ; 6       ;
@@ -1362,17 +1362,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - A[4]           ; 0                 ; 6       ;
 ;      - LEDR[4]~output ; 0                 ; 6       ;
 ; SW[5]                 ;                   ;         ;
+;      - B[5]           ; 1                 ; 6       ;
 ;      - A[5]           ; 1                 ; 6       ;
 ;      - LEDR[5]~output ; 1                 ; 6       ;
-;      - B[5]~feeder    ; 1                 ; 6       ;
 ; SW[6]                 ;                   ;         ;
 ;      - B[6]           ; 0                 ; 6       ;
 ;      - A[6]           ; 0                 ; 6       ;
 ;      - LEDR[6]~output ; 0                 ; 6       ;
 ; SW[7]                 ;                   ;         ;
-;      - B[7]           ; 0                 ; 6       ;
 ;      - A[7]           ; 0                 ; 6       ;
 ;      - LEDR[7]~output ; 0                 ; 6       ;
+;      - B[7]~feeder    ; 0                 ; 6       ;
 ; SW[9]                 ;                   ;         ;
 ;      - B[0]           ; 0                 ; 6       ;
 ;      - A[0]           ; 0                 ; 6       ;
@@ -1399,40 +1399,40 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - A[7]           ; 0                 ; 6       ;
 ;      - shown[7]~7     ; 0                 ; 6       ;
 ;      - LEDR[8]~output ; 0                 ; 6       ;
-; KEY[1]                ;                   ;         ;
-;      - B[0]           ; 0                 ; 0       ;
-;      - B[1]           ; 0                 ; 0       ;
-;      - B[2]           ; 0                 ; 0       ;
-;      - B[3]           ; 0                 ; 0       ;
-;      - B[4]           ; 0                 ; 0       ;
-;      - B[5]           ; 0                 ; 0       ;
-;      - B[6]           ; 0                 ; 0       ;
-;      - B[7]           ; 0                 ; 0       ;
-;      - A[0]           ; 0                 ; 0       ;
-;      - A[1]           ; 0                 ; 0       ;
-;      - A[2]           ; 0                 ; 0       ;
-;      - A[3]           ; 0                 ; 0       ;
-;      - A[4]           ; 0                 ; 0       ;
-;      - A[5]           ; 0                 ; 0       ;
-;      - A[6]           ; 0                 ; 0       ;
-;      - A[7]           ; 0                 ; 0       ;
 ; KEY[0]                ;                   ;         ;
-;      - B[0]           ; 0                 ; 6       ;
-;      - B[1]           ; 0                 ; 6       ;
-;      - B[2]           ; 0                 ; 6       ;
-;      - B[3]           ; 0                 ; 6       ;
-;      - B[4]           ; 0                 ; 6       ;
-;      - B[5]           ; 0                 ; 6       ;
-;      - B[6]           ; 0                 ; 6       ;
-;      - B[7]           ; 0                 ; 6       ;
-;      - A[0]           ; 0                 ; 6       ;
-;      - A[1]           ; 0                 ; 6       ;
-;      - A[2]           ; 0                 ; 6       ;
-;      - A[3]           ; 0                 ; 6       ;
-;      - A[4]           ; 0                 ; 6       ;
-;      - A[5]           ; 0                 ; 6       ;
-;      - A[6]           ; 0                 ; 6       ;
-;      - A[7]           ; 0                 ; 6       ;
+;      - B[0]           ; 1                 ; 0       ;
+;      - B[1]           ; 1                 ; 0       ;
+;      - B[2]           ; 1                 ; 0       ;
+;      - B[3]           ; 1                 ; 0       ;
+;      - B[4]           ; 1                 ; 0       ;
+;      - B[5]           ; 1                 ; 0       ;
+;      - B[6]           ; 1                 ; 0       ;
+;      - B[7]           ; 1                 ; 0       ;
+;      - A[0]           ; 1                 ; 0       ;
+;      - A[1]           ; 1                 ; 0       ;
+;      - A[2]           ; 1                 ; 0       ;
+;      - A[3]           ; 1                 ; 0       ;
+;      - A[4]           ; 1                 ; 0       ;
+;      - A[5]           ; 1                 ; 0       ;
+;      - A[6]           ; 1                 ; 0       ;
+;      - A[7]           ; 1                 ; 0       ;
+; KEY[1]                ;                   ;         ;
+;      - B[0]           ; 1                 ; 6       ;
+;      - B[1]           ; 1                 ; 6       ;
+;      - B[2]           ; 1                 ; 6       ;
+;      - B[3]           ; 1                 ; 6       ;
+;      - B[4]           ; 1                 ; 6       ;
+;      - B[5]           ; 1                 ; 6       ;
+;      - B[6]           ; 1                 ; 6       ;
+;      - B[7]           ; 1                 ; 6       ;
+;      - A[0]           ; 1                 ; 6       ;
+;      - A[1]           ; 1                 ; 6       ;
+;      - A[2]           ; 1                 ; 6       ;
+;      - A[3]           ; 1                 ; 6       ;
+;      - A[4]           ; 1                 ; 6       ;
+;      - A[5]           ; 1                 ; 6       ;
+;      - A[6]           ; 1                 ; 6       ;
+;      - A[7]           ; 1                 ; 6       ;
 +-----------------------+-------------------+---------+
 
 
@@ -1441,8 +1441,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+----------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; Name   ; Location ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +--------+----------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; KEY[0] ; PIN_B8   ; 16      ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; KEY[1] ; PIN_A7   ; 16      ; Clock        ; no     ; --                   ; --               ; --                        ;
+; KEY[0] ; PIN_B8   ; 16      ; Clock        ; no     ; --                   ; --               ; --                        ;
+; KEY[1] ; PIN_A7   ; 16      ; Async. clear ; no     ; --                   ; --               ; --                        ;
 ; SW[9]  ; PIN_F15  ; 25      ; Clock enable ; no     ; --                   ; --               ; --                        ;
 +--------+----------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
@@ -1453,14 +1453,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Routing Resource Type ; Usage                  ;
 +-----------------------+------------------------+
 ; Block interconnects   ; 61 / 148,641 ( < 1 % ) ;
-; C16 interconnects     ; 3 / 5,382 ( < 1 % )    ;
-; C4 interconnects      ; 46 / 106,704 ( < 1 % ) ;
+; C16 interconnects     ; 2 / 5,382 ( < 1 % )    ;
+; C4 interconnects      ; 40 / 106,704 ( < 1 % ) ;
 ; Direct links          ; 9 / 148,641 ( < 1 % )  ;
 ; Global clocks         ; 0 / 20 ( 0 % )         ;
-; Local interconnects   ; 8 / 49,760 ( < 1 % )   ;
+; Local interconnects   ; 4 / 49,760 ( < 1 % )   ;
 ; NSLEEPs               ; 0 / 500 ( 0 % )        ;
 ; R24 interconnects     ; 9 / 5,406 ( < 1 % )    ;
-; R4 interconnects      ; 66 / 147,764 ( < 1 % ) ;
+; R4 interconnects      ; 79 / 147,764 ( < 1 % ) ;
 +-----------------------+------------------------+
 
 
@@ -1474,8 +1474,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 3                                          ; 0                           ;
 ; 4                                          ; 0                           ;
 ; 5                                          ; 0                           ;
-; 6                                          ; 1                           ;
-; 7                                          ; 0                           ;
+; 6                                          ; 0                           ;
+; 7                                          ; 1                           ;
 ; 8                                          ; 1                           ;
 ; 9                                          ; 0                           ;
 ; 10                                         ; 0                           ;
@@ -1483,8 +1483,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 12                                         ; 0                           ;
 ; 13                                         ; 0                           ;
 ; 14                                         ; 0                           ;
-; 15                                         ; 0                           ;
-; 16                                         ; 1                           ;
+; 15                                         ; 1                           ;
+; 16                                         ; 0                           ;
 +--------------------------------------------+-----------------------------+
 
 
@@ -1502,7 +1502,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                        ;
 +----------------------------------------------+-----------------------------+
-; Number of Signals Sourced  (Average = 10.75) ; Number of LABs  (Total = 4) ;
+; Number of Signals Sourced  (Average = 10.25) ; Number of LABs  (Total = 4) ;
 +----------------------------------------------+-----------------------------+
 ; 0                                            ; 0                           ;
 ; 1                                            ; 1                           ;
@@ -1510,13 +1510,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 3                                            ; 0                           ;
 ; 4                                            ; 0                           ;
 ; 5                                            ; 0                           ;
-; 6                                            ; 1                           ;
-; 7                                            ; 0                           ;
+; 6                                            ; 0                           ;
+; 7                                            ; 1                           ;
 ; 8                                            ; 0                           ;
 ; 9                                            ; 0                           ;
-; 10                                           ; 0                           ;
+; 10                                           ; 1                           ;
 ; 11                                           ; 0                           ;
-; 12                                           ; 1                           ;
+; 12                                           ; 0                           ;
 ; 13                                           ; 0                           ;
 ; 14                                           ; 0                           ;
 ; 15                                           ; 0                           ;
@@ -1527,8 +1527,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 20                                           ; 0                           ;
 ; 21                                           ; 0                           ;
 ; 22                                           ; 0                           ;
-; 23                                           ; 0                           ;
-; 24                                           ; 1                           ;
+; 23                                           ; 1                           ;
 +----------------------------------------------+-----------------------------+
 
 
@@ -1543,13 +1542,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; 3                                               ; 0                           ;
 ; 4                                               ; 0                           ;
 ; 5                                               ; 0                           ;
-; 6                                               ; 1                           ;
-; 7                                               ; 0                           ;
+; 6                                               ; 0                           ;
+; 7                                               ; 1                           ;
 ; 8                                               ; 1                           ;
 ; 9                                               ; 0                           ;
 ; 10                                              ; 0                           ;
-; 11                                              ; 0                           ;
-; 12                                              ; 1                           ;
+; 11                                              ; 1                           ;
 +-------------------------------------------------+-----------------------------+
 
 
@@ -1678,8 +1676,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; SW[6]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[7]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; SW[9]              ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
-; KEY[1]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 ; KEY[0]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
+; KEY[1]             ; Pass      ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Pass      ; Pass      ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Pass         ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Inapplicable ; Pass      ; Inapplicable ; Inapplicable ;
 +--------------------+-----------+--------------+-----------+--------------+--------------+-----------+-----------+--------------+-----------+-----------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+--------------+-----------+--------------+--------------+
 
 
@@ -2088,7 +2086,7 @@ Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:00
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
     Info (170196): Router estimated peak interconnect usage is 0% of the available device resources in the region that extends from location X45_Y44 to location X55_Y54
@@ -2096,7 +2094,7 @@ Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
-Info (11888): Total time spent on timing analysis during the Fitter is 0.13 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.10 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -2105,9 +2103,9 @@ Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab03/output_files/main.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 321 warnings
-    Info: Peak virtual memory: 6678 megabytes
-    Info: Processing ended: Thu Sep 25 22:15:45 2025
-    Info: Elapsed time: 00:00:07
+    Info: Peak virtual memory: 6694 megabytes
+    Info: Processing ended: Mon Sep 29 16:36:49 2025
+    Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:11
 
 
