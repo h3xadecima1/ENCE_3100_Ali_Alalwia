@@ -1,0 +1,74 @@
+module main(
+	input 				MAX10_CLK1_50,
+	input 	[9:0] 	SW,
+	input 	[1:0]		KEY,
+	output 	[9:0] 	LEDR,
+	output	[7:0]		HEX0,
+	output	[7:0]		HEX1,
+	output	[7:0]		HEX2,
+	output	[7:0]		HEX3,
+	output	[7:0]		HEX4,
+	output	[7:0]		HEX5
+);
+
+	// Part I
+	//******************
+	
+	// First create the TFF from a DFF
+	// -------------------------------
+	
+	// Create an 8-bit counter cascading 8 TFF
+	// ---------------------------------------
+	
+	// Connect 2 seg7Decoders to the output of the TFF counter
+	// --------------------------------------------------------
+	/*
+	wire [7:0] w_Q;
+		
+	// seg7Decoder([3:0]i_bin, [7:0]o_HEX);
+	seg7Decoder Ones(w_Q[3:0], HEX0);
+	seg7Decoder Tens(w_Q[7:4], HEX1);
+	*/
+	
+	//******************
+	
+	// Part II
+	//******************
+
+	// Connect 2 seg7Decoders to the output of the shift register
+	// --------------------------------------------------------
+	
+	//******************
+	
+	// Part III
+	//******************	
+	
+	// Connect 2 seg7Decoders to the output of the LPM Counter
+	// --------------------------------------------------------
+		
+	//******************
+	
+	// Part IV
+	//******************
+
+	// Create 1 second counter
+	// -----------------------
+	
+	// Connect the 1 second counter to one of the previous counters
+	// ------------------------------------------------------------
+		
+	// Connect the counter to one seg7Decoder
+	// --------------------------------------
+	
+	// Finally add additional logic to reset back to 0 when it reaches 9
+	// -----------------------------------------------------------------
+
+	//******************
+	
+	// Part V
+	//******************
+	//******************
+
+endmodule
+
+`default_nettype none
