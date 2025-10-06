@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(10M50DAF484) Path("C:/Goncalo/Software/QuartusLite/DE10_Board/Projects/Altera_Labs/Lab_4_Template/output_files/") File("main.sof") MfrSpec(OpMask(1));
+		Device PartName(10M50DAF484) Path("C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/output_files/") File("main.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

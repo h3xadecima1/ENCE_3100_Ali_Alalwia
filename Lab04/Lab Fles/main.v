@@ -53,8 +53,8 @@ module main(
 	
 	// Part III
 	//******************	
-	
 	/*
+	
 	wire w_clk;
 	
 	// counter_1s (Clock, Resetn, led_out);
@@ -76,7 +76,7 @@ module main(
 	
 	// Part IV
 	//******************
-   /*
+  /* 
   wire rst_n = KEY[0];
 
   // 1 Hz tick generator
@@ -115,7 +115,7 @@ module main(
 	/*
 	wire rst_n = KEY[0];
    wire tick;
-   tick_1hz u_tick(.clk(CLOCK_50), .rst_n(rst_n), .tick(tick));
+   tick_1hz u_tick(.clk(MAX10_CLK1_50), .rst_n(rst_n), .tick(tick));
 
    // HELLO as codes: H=0, E=1, L=2, L=2, O=3
    reg [2:0] msg [0:4];
@@ -124,7 +124,7 @@ module main(
    end
 
    reg [2:0] i;  // 0..4, index of left character in the window
-   always @(posedge CLOCK_50 or negedge rst_n) begin
+   always @(posedge MAX10_CLK1_50 or negedge rst_n) begin
     if (!rst_n) i <= 3'd0;
     else if (tick) i <= (i==3'd4) ? 3'd0 : i + 3'd1;
    end

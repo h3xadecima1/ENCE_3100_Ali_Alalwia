@@ -1,5 +1,5 @@
 Analysis & Synthesis report for main
-Fri Oct  3 16:49:08 2025
+Mon Oct  6 08:47:53 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -13,12 +13,13 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
+  8. Analysis & Synthesis IP Cores Summary
   9. General Register Statistics
- 10. Parameter Settings for User Entity Instance: tick_1hz:u_tick
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+ 10. Parameter Settings for User Entity Instance: counter_1s:C0
+ 11. Parameter Settings for User Entity Instance: Counter_LPM:CLPM|lpm_counter:LPM_COUNTER_component
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
 
 
 
@@ -45,15 +46,15 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Oct  3 16:49:08 2025           ;
+; Analysis & Synthesis Status        ; Successful - Mon Oct  6 08:47:53 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; main                                            ;
 ; Top-level Entity Name              ; main                                            ;
 ; Family                             ; MAX 10                                          ;
-; Total logic elements               ; 0                                               ;
-;     Total combinational functions  ; 0                                               ;
-;     Dedicated logic registers      ; 0                                               ;
-; Total registers                    ; 0                                               ;
+; Total logic elements               ; 69                                              ;
+;     Total combinational functions  ; 69                                              ;
+;     Dedicated logic registers      ; 34                                              ;
+; Total registers                    ; 34                                              ;
 ; Total pins                         ; 71                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -159,90 +160,92 @@ on the Quartus Prime software download page.
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                         ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                     ; Library ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+---------+
-; main.v                           ; yes             ; User Verilog HDL File        ; C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v        ;         ;
-; tick_1hz.v                       ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/tick_1hz.v    ;         ;
-; seg7_letter.v                    ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/seg7_letter.v ;         ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                             ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                         ; Library ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------+---------+
+; main.v                           ; yes             ; User Verilog HDL File        ; C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v          ;         ;
+; Counter_LPM.v                    ; yes             ; User Wizard-Generated File   ; C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/Counter_LPM.v   ;         ;
+; counter_1s.v                     ; yes             ; User Verilog HDL File        ; C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/counter_1s.v    ;         ;
+; lpm_counter.tdf                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_counter.tdf            ;         ;
+; lpm_constant.inc                 ; yes             ; Megafunction                 ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_constant.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_decode.inc             ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_add_sub.inc            ;         ;
+; cmpconst.inc                     ; yes             ; Megafunction                 ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/cmpconst.inc               ;         ;
+; lpm_compare.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_compare.inc            ;         ;
+; lpm_counter.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_counter.inc            ;         ;
+; dffeea.inc                       ; yes             ; Megafunction                 ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/dffeea.inc                 ;         ;
+; alt_counter_stratix.inc          ; yes             ; Megafunction                 ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/alt_counter_stratix.inc    ;         ;
+; aglobal241.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/aglobal241.inc             ;         ;
+; db/cntr_47i.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/db/cntr_47i.tdf ;         ;
+; seg7decoder.v                    ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/seg7decoder.v   ;         ;
++----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                 ;
-+---------------------------------------------+---------------+
-; Resource                                    ; Usage         ;
-+---------------------------------------------+---------------+
-;                                             ;               ;
-; Total combinational functions               ; 0             ;
-; Logic element usage by number of LUT inputs ;               ;
-;     -- 4 input functions                    ; 0             ;
-;     -- 3 input functions                    ; 0             ;
-;     -- <=2 input functions                  ; 0             ;
-;                                             ;               ;
-; Logic elements by mode                      ;               ;
-;     -- normal mode                          ; 0             ;
-;     -- arithmetic mode                      ; 0             ;
-;                                             ;               ;
-; Total registers                             ; 0             ;
-;     -- Dedicated logic registers            ; 0             ;
-;     -- I/O registers                        ; 0             ;
-;                                             ;               ;
-; I/O pins                                    ; 71            ;
-;                                             ;               ;
-; Embedded Multiplier 9-bit elements          ; 0             ;
-;                                             ;               ;
-; Maximum fan-out node                        ; MAX10_CLK1_50 ;
-; Maximum fan-out                             ; 1             ;
-; Total fan-out                               ; 71            ;
-; Average fan-out                             ; 0.50          ;
-+---------------------------------------------+---------------+
++-------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                       ;
++---------------------------------------------+---------------------+
+; Resource                                    ; Usage               ;
++---------------------------------------------+---------------------+
+; Estimated Total logic elements              ; 69                  ;
+;                                             ;                     ;
+; Total combinational functions               ; 69                  ;
+; Logic element usage by number of LUT inputs ;                     ;
+;     -- 4 input functions                    ; 22                  ;
+;     -- 3 input functions                    ; 0                   ;
+;     -- <=2 input functions                  ; 47                  ;
+;                                             ;                     ;
+; Logic elements by mode                      ;                     ;
+;     -- normal mode                          ; 38                  ;
+;     -- arithmetic mode                      ; 31                  ;
+;                                             ;                     ;
+; Total registers                             ; 34                  ;
+;     -- Dedicated logic registers            ; 34                  ;
+;     -- I/O registers                        ; 0                   ;
+;                                             ;                     ;
+; I/O pins                                    ; 71                  ;
+;                                             ;                     ;
+; Embedded Multiplier 9-bit elements          ; 0                   ;
+;                                             ;                     ;
+; Maximum fan-out node                        ; MAX10_CLK1_50~input ;
+; Maximum fan-out                             ; 26                  ;
+; Total fan-out                               ; 381                 ;
+; Average fan-out                             ; 1.56                ;
++---------------------------------------------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; |main                      ; 0 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 71   ; 0            ; 0          ; |main               ; main        ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                            ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------+-------------+--------------+
+; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                              ; Entity Name ; Library Name ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------+-------------+--------------+
+; |main                                     ; 69 (1)              ; 34 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 71   ; 0            ; 0          ; |main                                                                            ; main        ; work         ;
+;    |Counter_LPM:CLPM|                     ; 8 (0)               ; 8 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|Counter_LPM:CLPM                                                           ; Counter_LPM ; work         ;
+;       |lpm_counter:LPM_COUNTER_component| ; 8 (0)               ; 8 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|Counter_LPM:CLPM|lpm_counter:LPM_COUNTER_component                         ; lpm_counter ; work         ;
+;          |cntr_47i:auto_generated|        ; 8 (8)               ; 8 (8)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|Counter_LPM:CLPM|lpm_counter:LPM_COUNTER_component|cntr_47i:auto_generated ; cntr_47i    ; work         ;
+;    |counter_1s:C0|                        ; 46 (46)             ; 26 (26)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|counter_1s:C0                                                              ; counter_1s  ; work         ;
+;    |seg7Decoder:Ones|                     ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|seg7Decoder:Ones                                                           ; seg7Decoder ; work         ;
+;    |seg7Decoder:Tens|                     ; 7 (7)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|seg7Decoder:Tens                                                           ; seg7Decoder ; work         ;
++-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                            ;
-+----------------------------------------+--------------------------------------+
-; Register name                          ; Reason for Removal                   ;
-+----------------------------------------+--------------------------------------+
-; i[0..2]                                ; Stuck at GND due to stuck port clock ;
-; tick_1hz:u_tick|tick                   ; Lost fanout                          ;
-; tick_1hz:u_tick|cnt[0..25]             ; Stuck at GND due to stuck port clock ;
-; msg~0                                  ; Stuck at GND due to stuck port clock ;
-; msg~1                                  ; Stuck at GND due to stuck port clock ;
-; msg~2                                  ; Stuck at GND due to stuck port clock ;
-; msg~3                                  ; Stuck at GND due to stuck port clock ;
-; msg~4                                  ; Stuck at GND due to stuck port clock ;
-; msg~5                                  ; Stuck at GND due to stuck port clock ;
-; msg~6                                  ; Stuck at GND due to stuck port clock ;
-; msg~7                                  ; Stuck at GND due to stuck port clock ;
-; msg~8                                  ; Stuck at GND due to stuck port clock ;
-; msg~9                                  ; Stuck at GND due to stuck port clock ;
-; msg~10                                 ; Stuck at GND due to stuck port clock ;
-; msg~11                                 ; Stuck at GND due to stuck port clock ;
-; msg~12                                 ; Stuck at GND due to stuck port clock ;
-; msg~13                                 ; Stuck at GND due to stuck port clock ;
-; msg~14                                 ; Stuck at GND due to stuck port clock ;
-; Total Number of Removed Registers = 45 ;                                      ;
-+----------------------------------------+--------------------------------------+
++----------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                    ;
++--------+--------------+---------+--------------+--------------+------------------------+-----------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance        ; IP Include File ;
++--------+--------------+---------+--------------+--------------+------------------------+-----------------+
+; Altera ; LPM_COUNTER  ; 24.1    ; N/A          ; N/A          ; |main|Counter_LPM:CLPM ; Counter_LPM.v   ;
++--------+--------------+---------+--------------+--------------+------------------------+-----------------+
 
 
 +------------------------------------------------------+
@@ -250,23 +253,50 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 34    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Asynchronous Clear ; 26    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 8     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: tick_1hz:u_tick ;
-+----------------+----------+----------------------------------+
-; Parameter Name ; Value    ; Type                             ;
-+----------------+----------+----------------------------------+
-; CLK_HZ         ; 50000000 ; Signed Integer                   ;
-+----------------+----------+----------------------------------+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: counter_1s:C0 ;
++----------------+----------+--------------------------------+
+; Parameter Name ; Value    ; Type                           ;
++----------------+----------+--------------------------------+
+; DIVISOR        ; 25000000 ; Signed Integer                 ;
++----------------+----------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Counter_LPM:CLPM|lpm_counter:LPM_COUNTER_component ;
++------------------------+-------------+----------------------------------------------------------+
+; Parameter Name         ; Value       ; Type                                                     ;
++------------------------+-------------+----------------------------------------------------------+
+; AUTO_CARRY_CHAINS      ; ON          ; AUTO_CARRY                                               ;
+; IGNORE_CARRY_BUFFERS   ; OFF         ; IGNORE_CARRY                                             ;
+; AUTO_CASCADE_CHAINS    ; ON          ; AUTO_CASCADE                                             ;
+; IGNORE_CASCADE_BUFFERS ; OFF         ; IGNORE_CASCADE                                           ;
+; LPM_WIDTH              ; 8           ; Signed Integer                                           ;
+; LPM_DIRECTION          ; UP          ; Untyped                                                  ;
+; LPM_MODULUS            ; 0           ; Untyped                                                  ;
+; LPM_AVALUE             ; UNUSED      ; Untyped                                                  ;
+; LPM_SVALUE             ; UNUSED      ; Untyped                                                  ;
+; LPM_PORT_UPDOWN        ; PORT_UNUSED ; Untyped                                                  ;
+; DEVICE_FAMILY          ; MAX 10      ; Untyped                                                  ;
+; CARRY_CHAIN            ; MANUAL      ; Untyped                                                  ;
+; CARRY_CHAIN_LENGTH     ; 48          ; CARRY_CHAIN_LENGTH                                       ;
+; NOT_GATE_PUSH_BACK     ; ON          ; NOT_GATE_PUSH_BACK                                       ;
+; CARRY_CNT_EN           ; SMART       ; Untyped                                                  ;
+; LABWIDE_SCLR           ; ON          ; Untyped                                                  ;
+; USE_NEW_VERSION        ; TRUE        ; Untyped                                                  ;
+; CBXI_PARAMETER         ; cntr_47i    ; Untyped                                                  ;
++------------------------+-------------+----------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -276,12 +306,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 71                          ;
-; cycloneiii_lcell_comb ; 2                           ;
-;     normal            ; 2                           ;
+; cycloneiii_ff         ; 34                          ;
+;     CLR               ; 26                          ;
+;     ENA SLD           ; 8                           ;
+; cycloneiii_lcell_comb ; 72                          ;
+;     arith             ; 31                          ;
+;         2 data inputs ; 31                          ;
+;     normal            ; 41                          ;
 ;         0 data inputs ; 2                           ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 13                          ;
+;         4 data inputs ; 22                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
+; Max LUT depth         ; 4.40                        ;
+; Average LUT depth     ; 2.94                        ;
 +-----------------------+-----------------------------+
 
 
@@ -300,12 +338,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Fri Oct  3 16:49:01 2025
+    Info: Processing started: Mon Oct  6 08:47:45 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off main -c main
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file main.v
-    Info (12023): Found entity 1: main File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 1
+    Info (12023): Found entity 1: main File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 1
 Warning (12019): Can't analyze file -- file seg7_dec.v is missing
 Warning (12019): Can't analyze file -- file mux_2_1_1bit.v is missing
 Warning (12019): Can't analyze file -- file comparator.v is missing
@@ -333,96 +371,86 @@ Warning (12019): Can't analyze file -- file TFF_Counter_8bit.v is missing
 Warning (12019): Can't analyze file -- file DecaDecoder.v is missing
 Warning (12019): Can't analyze file -- file ShifRegister_16bit.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file counter_lpm.v
-    Info (12023): Found entity 1: Counter_LPM File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/Counter_LPM.v Line: 40
+    Info (12023): Found entity 1: Counter_LPM File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/Counter_LPM.v Line: 40
 Warning (12019): Can't analyze file -- file counter_1sec.v is missing
 Warning (12019): Can't analyze file -- file displayPattern.v is missing
 Warning (12019): Can't analyze file -- file count_updown.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file tflipflop_8bits.v
-    Info (12023): Found entity 1: TFlipFlop_8bits File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/TFlipFlop_8bits.v Line: 1
+    Info (12023): Found entity 1: TFlipFlop_8bits File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/TFlipFlop_8bits.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file tflipflop_1bit.v
-    Info (12023): Found entity 1: TFlipFlop_1bit File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/TFlipFlop_1bit.v Line: 1
+    Info (12023): Found entity 1: TFlipFlop_1bit File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/TFlipFlop_1bit.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file counter_1s.v
-    Info (12023): Found entity 1: counter_1s File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/counter_1s.v Line: 1
+    Info (12023): Found entity 1: counter_1s File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/counter_1s.v Line: 1
 Warning (12019): Can't analyze file -- file shiftRegister_16bit.v is missing
-Warning (10236): Verilog HDL Implicit Net warning at main.v(118): created implicit net for "CLOCK_50" File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 118
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10030): Net "msg.data_a" at main.v(121) has no driver or initial value, using a default initial value '0' File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 121
-Warning (10030): Net "msg.waddr_a" at main.v(121) has no driver or initial value, using a default initial value '0' File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 121
-Warning (10030): Net "msg.we_a" at main.v(121) has no driver or initial value, using a default initial value '0' File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 121
-Warning (10034): Output port "LEDR" at main.v(5) has no driver File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 5
-Warning (10034): Output port "HEX2" at main.v(8) has no driver File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 8
-Warning (10034): Output port "HEX3" at main.v(9) has no driver File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 9
-Warning (10034): Output port "HEX4" at main.v(10) has no driver File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 10
-Warning (10034): Output port "HEX5" at main.v(12) has no driver File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 12
-Warning (12125): Using design file tick_1hz.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: tick_1hz File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/tick_1hz.v Line: 2
-Info (12128): Elaborating entity "tick_1hz" for hierarchy "tick_1hz:u_tick" File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 118
-Warning (12125): Using design file seg7_letter.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: seg7_letter File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/seg7_letter.v Line: 2
-Info (12128): Elaborating entity "seg7_letter" for hierarchy "seg7_letter:L" File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 135
-Critical Warning (127005): Memory depth (8) in the design file differs from memory depth (5) in the Memory Initialization File "C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/db/main.ram0_main_3dde57.hdl.mif" -- setting initial value for remaining addresses to 0
-Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276013): RAM logic "msg" is uninferred because MIF is not supported for the selected family File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 121
+Warning (10034): Output port "LEDR" at main.v(5) has no driver File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 5
+Warning (10034): Output port "HEX2" at main.v(8) has no driver File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 8
+Warning (10034): Output port "HEX3" at main.v(9) has no driver File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 9
+Warning (10034): Output port "HEX4" at main.v(10) has no driver File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 10
+Warning (10034): Output port "HEX5" at main.v(12) has no driver File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 12
+Info (12128): Elaborating entity "counter_1s" for hierarchy "counter_1s:C0" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 61
+Warning (10230): Verilog HDL assignment warning at counter_1s.v(26): truncated value with size 32 to match size of target (25) File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/counter_1s.v Line: 26
+Info (12128): Elaborating entity "Counter_LPM" for hierarchy "Counter_LPM:CLPM" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 68
+Info (12128): Elaborating entity "lpm_counter" for hierarchy "Counter_LPM:CLPM|lpm_counter:LPM_COUNTER_component" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/Counter_LPM.v Line: 69
+Info (12130): Elaborated megafunction instantiation "Counter_LPM:CLPM|lpm_counter:LPM_COUNTER_component" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/Counter_LPM.v Line: 69
+Info (12133): Instantiated megafunction "Counter_LPM:CLPM|lpm_counter:LPM_COUNTER_component" with the following parameter: File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/Counter_LPM.v Line: 69
+    Info (12134): Parameter "lpm_direction" = "UP"
+    Info (12134): Parameter "lpm_port_updown" = "PORT_UNUSED"
+    Info (12134): Parameter "lpm_type" = "LPM_COUNTER"
+    Info (12134): Parameter "lpm_width" = "8"
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_47i.tdf
+    Info (12023): Found entity 1: cntr_47i File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/db/cntr_47i.tdf Line: 26
+Info (12128): Elaborating entity "cntr_47i" for hierarchy "Counter_LPM:CLPM|lpm_counter:LPM_COUNTER_component|cntr_47i:auto_generated" File: c:/intelfpga_lite/24.1std/quartus/libraries/megafunctions/lpm_counter.tdf Line: 259
+Warning (10229): Verilog HDL Expression warning at seg7decoder.v(9): truncated literal to match 7 bits File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/seg7decoder.v Line: 9
+Warning (12125): Using design file seg7decoder.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: seg7Decoder File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/seg7decoder.v Line: 1
+Info (12128): Elaborating entity "seg7Decoder" for hierarchy "seg7Decoder:Ones" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 71
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 5
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 5
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 5
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 5
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 5
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 5
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 5
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 5
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 5
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 5
-    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 6
-    Warning (13410): Pin "HEX0[1]" is stuck at VCC File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 6
-    Warning (13410): Pin "HEX0[2]" is stuck at VCC File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 6
-    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 6
-    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 6
-    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 6
-    Warning (13410): Pin "HEX0[6]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 6
-    Warning (13410): Pin "HEX0[7]" is stuck at VCC File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 6
-    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 7
-    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 7
-    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 7
-    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 7
-    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 7
-    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 7
-    Warning (13410): Pin "HEX1[6]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 7
-    Warning (13410): Pin "HEX1[7]" is stuck at VCC File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 7
-    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 8
-    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 8
-    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 8
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 8
-    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 8
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 8
-    Warning (13410): Pin "HEX2[6]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 8
-    Warning (13410): Pin "HEX2[7]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 8
-    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 9
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 9
-    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 9
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 9
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 9
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 9
-    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 9
-    Warning (13410): Pin "HEX3[7]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 9
-    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 10
-    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 10
-    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 10
-    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 10
-    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 10
-    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 10
-    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 10
-    Warning (13410): Pin "HEX4[7]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 10
-    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 12
-    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 12
-    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 12
-    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 12
-    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 12
-    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 12
-    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 12
-    Warning (13410): Pin "HEX5[7]" is stuck at GND File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 12
-Info (17049): 1 registers lost all their fanouts during netlist optimizations.
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 5
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 5
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 5
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 5
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 5
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 5
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 5
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 5
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 5
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 5
+    Warning (13410): Pin "HEX0[7]" is stuck at VCC File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 6
+    Warning (13410): Pin "HEX1[7]" is stuck at VCC File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 7
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 8
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 8
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 8
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 8
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 8
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 8
+    Warning (13410): Pin "HEX2[6]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 8
+    Warning (13410): Pin "HEX2[7]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 8
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 9
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 9
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 9
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 9
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 9
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 9
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 9
+    Warning (13410): Pin "HEX3[7]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 9
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 10
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 10
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 10
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 10
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 10
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 10
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 10
+    Warning (13410): Pin "HEX4[7]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 10
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 12
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 12
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 12
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 12
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 12
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 12
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 12
+    Warning (13410): Pin "HEX5[7]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 12
+Info (286030): Timing-Driven Synthesis is running
 Warning (20013): Ignored 24 assignments for entity "DE10_LITE_Golden_Top" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE10_LITE_Golden_Top -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE10_LITE_Golden_Top -section_id Top was ignored
@@ -450,27 +478,24 @@ Warning (20013): Ignored 24 assignments for entity "DE10_LITE_Golden_Top" -- ent
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE10_LITE_Golden_Top -section_id Top was ignored
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 13 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "MAX10_CLK1_50" File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 2
-    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 3
-    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 3
-    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 3
-    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 3
-    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 3
-    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 3
-    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 3
-    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 3
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 3
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 3
-    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 4
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/S0l1d/OneDrive/Desktop/Lab_4_inclass_work/main.v Line: 4
-Info (21057): Implemented 71 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 9 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 3
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 3
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 3
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 3
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 3
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 3
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 3
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 4
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 4
+Info (21057): Implemented 140 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 58 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 141 warnings
-    Info: Peak virtual memory: 4757 megabytes
-    Info: Processing ended: Fri Oct  3 16:49:08 2025
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:19
+    Info (21061): Implemented 69 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 119 warnings
+    Info: Peak virtual memory: 4861 megabytes
+    Info: Processing ended: Mon Oct  6 08:47:53 2025
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:21
 
 
