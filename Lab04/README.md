@@ -3,8 +3,8 @@
 **Course:** ENEE / Digital Systems Laboratory  
 **Lab Number:** 4 – Counters  
 **Board:** Altera DE2-series (MAX10 FPGA adaptation)  
-**Student:** *[Your Name]*  
-**Date:** *[Insert Date]*  
+**Student:** Ali Alalwia
+**Date:** 10/06/2025 
 
 ---
 
@@ -61,8 +61,8 @@ seg7Decoder Ones(w_Q[3:0], HEX0);
 seg7Decoder Tens(w_Q[7:4], HEX1);
 ```
 
-📷 *Insert simulation waveform here*  
-📷 *Insert FPGA test photo here*  
+<img src="img/part1.gif" alt="part1" width="500"/>
+ 
 
 ---
 
@@ -84,8 +84,8 @@ seg7Decoder Ones(Q[3:0], HEX0);
 seg7Decoder Tens(Q[7:4], HEX1);
 ```
 
-📷 *Insert RTL schematic here*  
-📷 *Insert simulation waveform here*  
+<img src="img/part2.gif" alt="part2" width="500"/>
+  
 
 ---
 
@@ -106,8 +106,7 @@ seg7Decoder Ones(w_Q[3:0], HEX0);
 seg7Decoder Tens(w_Q[7:4], HEX1);
 ```
 
-📷 *Insert LPM schematic here*  
-📷 *Insert FPGA test photo here*  
+<img src="img/part3.gif" alt="part3" width="500"/>
 
 ---
 
@@ -142,8 +141,7 @@ end
 seg7Decoder h0(.i_bin(digit), .o_HEX(HEX0));
 ```
 
-📷 *Insert simulation results here*  
-📷 *Insert FPGA photo showing digits incrementing*  
+<img src="img/part4.gif" alt="part4" width="500"/>
 
 ---
 
@@ -172,8 +170,7 @@ seg7_letter L (.code(msg[i]), .HEX(HEX1));
 seg7_letter R (.code(msg[(i==3'd4)? 0 : i+1]), .HEX(HEX0));
 ```
 
-📷 *Insert waveform of HELLO scroll here*  
-📷 *Insert FPGA board photo here*  
+<img src="img/part5.gif" alt="part5" width="500"/> 
 
 ---
 
