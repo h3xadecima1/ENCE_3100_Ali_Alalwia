@@ -1,0 +1,19 @@
+module accumulator_sub_8bit(
+	input 	[7:0] i_A,
+	input				i_addsub, // 1 - sub / 0 - add
+	input 			i_clk,
+	input				i_rst,
+	output 			o_overflow,
+	output 	[7:0] o_S
+);
+
+
+	// 8bit Register
+
+	// 8bit ALU
+	
+	// 1bit Register
+	
+	// 8bit Register
+	
+endmodule

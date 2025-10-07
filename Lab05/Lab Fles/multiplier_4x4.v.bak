@@ -1,0 +1,20 @@
+
+`default_nettype none
+
+module multiplier_4x4(
+	input 	[3:0] i_A,
+	input 	[3:0] i_B,
+	output 	[7:0] o_P,
+	output 			o_Overflow
+);
+
+
+	// First Stage of Adders
+		
+	// Second Stage of Adders
+	
+	// Third Stage of Adders
+
+endmodule
+
+`default_nettype wire

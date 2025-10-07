@@ -1,0 +1,27 @@
+
+`default_nettype none
+
+module multiplier_8x8(
+	input 	[7:0] i_A,
+	input 	[7:0] i_B,
+	output 	[15:0] o_P,
+	output 			o_Overflow
+);
+
+	// First Stage of Adders
+		
+	// Second Stage of Adders	
+	
+	// Third Stage of Adders
+	
+	// Fourth Stage of Adders
+	
+	// 5th Stage of Adders
+		
+	// 6th Stage of Adders
+		
+	// 7th Stage of Adders	
+	
+endmodule
+
+`default_nettype wire

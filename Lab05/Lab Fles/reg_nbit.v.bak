@@ -1,0 +1,14 @@
+module reg_nbit #
+(
+	parameter N = 8 // default width
+)
+(
+	input 		[N-1:0] 	i_R,
+	input 					i_clk,
+	input						i_rst,
+	output reg	[N-1:0]	o_Q
+);
+
+	//TODO
+
+endmodule
