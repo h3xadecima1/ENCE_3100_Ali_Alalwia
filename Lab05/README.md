@@ -91,7 +91,7 @@ seg7Decoder SEG_H (w_H, HEX2);
 
 ### FPGA Board Photo
 ![FPGA Board – 8-bit Accumulator Output]<br/>
-
+<img src="img/part1.gif" alt="part1" width="500"/>
 ---
 
 ## Part II – Adder–Subtractor
@@ -152,6 +152,7 @@ seg7Decoder SEG_H (w_H, HEX2);
 
 ### FPGA Board Photo
 ![FPGA Board – Adder–Subtractor Output]<br/>
+<img src="img/part2.gif" alt="part1" width="500"/>
 
 --
 
@@ -217,6 +218,7 @@ seg7Decoder SEG_H (w_H, HEX2);
 
 ### FPGA Board Photo
 ![FPGA Board – 4×4 Array Multiplier Output]<br/>
+<img src="img/part3.gif" alt="part1" width="500"/>
 
 ---
 
@@ -289,6 +291,7 @@ reg_nbit #(16) REG_P (
 
 ### FPGA Board Photo
 ![FPGA Board – 8×8 Multiplier Output]<br/>
+<img src="img/part4.gif" alt="part1" width="500"/>
 
 ---
 
@@ -361,6 +364,7 @@ reg_nbit #(8) REG_P (
 
 ### FPGA Board Photo
 ![FPGA Board – 4×4 Adder-Tree Multiplier Output]<br/>
+<img src="img/part5.gif" alt="part1" width="500"/>
 
 ---
 
