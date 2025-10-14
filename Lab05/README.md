@@ -90,7 +90,7 @@ seg7Decoder SEG_H (w_H, HEX2);
 ---
 
 ### FPGA Board Photo
-![FPGA Board – 8-bit Accumulator Output]
+![FPGA Board – 8-bit Accumulator Output]<br/>
 
 ---
 
@@ -145,13 +145,13 @@ seg7Decoder SEG_H (w_H, HEX2);
 ---
 
 ### Block Diagram
-![Block Diagram – Adder–Subtractor](insert_block_diagram_here.png)
+![Block Diagram – Adder–Subtractor]<br/>
 <img src="img/Lab5_part2.png" alt="part1" width="500"/>
 
 ---
 
 ### FPGA Board Photo
-![FPGA Board – Adder–Subtractor Output](insert_board_photo_here.png)
+![FPGA Board – Adder–Subtractor Output]<br/>
 
 ---
 
@@ -210,13 +210,13 @@ seg7Decoder SEG_H (w_H, HEX2);
 ---
 
 ### Block Diagram
-![Block Diagram – 4×4 Array Multiplier](insert_block_diagram_here.png)
+![Block Diagram – 4×4 Array Multiplier]<br/>
 <img src="img/Lab5_part3.png" alt="part1" width="500"/>
 
 ---
 
 ### FPGA Board Photo
-![FPGA Board – 4×4 Array Multiplier Output](insert_board_photo_here.png)
+![FPGA Board – 4×4 Array Multiplier Output]<br/>
 
 ---
 
@@ -282,13 +282,13 @@ reg_nbit #(16) REG_P (
 ---
 
 ### Block Diagram
-![Block Diagram – 8×8 Registered Multiplier](insert_block_diagram_here.png)
+![Block Diagram – 8×8 Registered Multiplier]<br/>
 <img src="img/Lab5_part4.png" alt="part1" width="500"/>
 
 ---
 
 ### FPGA Board Photo
-![FPGA Board – 8×8 Multiplier Output](insert_board_photo_here.png)
+![FPGA Board – 8×8 Multiplier Output]<br/>
 
 ---
 
@@ -354,13 +354,13 @@ reg_nbit #(8) REG_P (
 ---
 
 ### Block Diagram
-![Block Diagram – 4×4 Adder-Tree Multiplier](insert_block_diagram_here.png)
+![Block Diagram – 4×4 Adder-Tree Multiplier]<br/>
 <img src="img/Lab5_part5.png" alt="part1" width="500"/>
 
 ---
 
 ### FPGA Board Photo
-![FPGA Board – 4×4 Adder-Tree Multiplier Output](insert_board_photo_here.png)
+![FPGA Board – 4×4 Adder-Tree Multiplier Output]<br/>
 
 ---
 

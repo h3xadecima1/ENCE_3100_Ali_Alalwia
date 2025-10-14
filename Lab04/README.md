@@ -66,13 +66,13 @@ seg7Decoder Tens(w_Q[7:4], HEX1);
 ---
 
 ### Block Diagram
-![Block Diagram – 8-bit T Flip-Flop Counter](insert_block_diagram_here.png)
+![Block Diagram – 8-bit T Flip-Flop Counter]<br/>
 <img src="img/Lab04_part1.png" alt="part1" width="500"/>
 
 ---
 
 ### FPGA Board Photo
-![FPGA Board – 8-bit Counter Output](insert_board_photo_here.png)
+![FPGA Board – 8-bit Counter Output]<br/>
 
 ---
 
@@ -114,13 +114,13 @@ seg7Decoder Tens(w_Q[7:4], HEX1);
 ---
 
 ### Block Diagram
-![Block Diagram – 8-bit counter_16bit Module](insert_block_diagram_here.png)
+![Block Diagram – 8-bit counter_16bit Module]<br/>
 <img src="img/Lab04_part2.png" alt="part1" width="500"/>
 
 ---
 
 ### FPGA Board Photo
-![FPGA Board – 8-bit counter_16bit Output](insert_board_photo_here.png)
+![FPGA Board – 8-bit counter_16bit Output]<br/>
 
 ---
 
@@ -163,12 +163,12 @@ seg7Decoder Tens(w_Q[7:4], HEX1);
 ---
 
 ### Block Diagram
-![Block Diagram – LPM Counter](insert_block_diagram_here.png)
+![Block Diagram – LPM Counter]<br/>
 <img src="img/Lab04_part3.png" alt="part1" width="500"/>
 ---
 
 ### FPGA Board Photo
-![FPGA Board – LPM Counter Output](insert_board_photo_here.png)
+![FPGA Board – LPM Counter Output]<br/>
 
 ---
 
@@ -225,12 +225,12 @@ seg7Decoder h0(.i_bin(digit), .o_HEX(HEX0));
 ---
 
 ### Block Diagram
-![Block Diagram – Decimal Digit Counter](insert_block_diagram_here.png)
+![Block Diagram – Decimal Digit Counter]<br/>
 <img src="img/Lab04_part4.png" alt="part1" width="500"/>
 ---
 
 ### FPGA Board Photo
-![FPGA Board – Decimal Counter Output](insert_board_photo_here.png)
+![FPGA Board – Decimal Counter Output]<br/>
 
 ---
 
@@ -281,12 +281,12 @@ seg7_letter R (.code(right), .HEX(HEX0));
 ---
 
 ### Block Diagram
-![Block Diagram – Scrolling HELLO Display](insert_block_diagram_here.png)
+![Block Diagram – Scrolling HELLO Display]<br/>
 <img src="img/Lab04_part5.png" alt="part1" width="500"/>
 ---
 
 ### FPGA Board Photo
-![FPGA Board – HELLO Display Output](insert_board_photo_here.png)
+![FPGA Board – HELLO Display Output]<br/>
 
 ---
 
