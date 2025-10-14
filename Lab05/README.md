@@ -85,7 +85,7 @@ seg7Decoder SEG_H (w_H, HEX2);
 ---
 
 ### Block Diagram
-![Block Diagram – 8-bit Accumulator]
+![Block Diagram – 8-bit Accumulator]<br/>
 <img src="img/Lab5_part1.png" alt="part1" width="500"/>
 ---
 
