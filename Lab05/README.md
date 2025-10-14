@@ -85,12 +85,12 @@ seg7Decoder SEG_H (w_H, HEX2);
 ---
 
 ### Block Diagram
-![Block Diagram – 8-bit Accumulator](insert_block_diagram_here.png)
+![Block Diagram – 8-bit Accumulator]
 <img src="img/Lab5_part1.png" alt="part1" width="500"/>
 ---
 
 ### FPGA Board Photo
-![FPGA Board – 8-bit Accumulator Output](insert_board_photo_here.png)
+![FPGA Board – 8-bit Accumulator Output]
 
 ---
 
