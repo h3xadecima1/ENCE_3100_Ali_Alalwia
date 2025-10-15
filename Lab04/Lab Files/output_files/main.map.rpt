@@ -1,0 +1,473 @@
+Analysis & Synthesis report for main
+Tue Oct 14 20:21:47 2025
+Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: tick_1hz:u_tick
+ 11. Post-Synthesis Netlist Statistics for Top Partition
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Oct 14 20:21:47 2025           ;
+; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
+; Revision Name                      ; main                                            ;
+; Top-level Entity Name              ; main                                            ;
+; Family                             ; MAX 10                                          ;
+; Total logic elements               ; 56                                              ;
+;     Total combinational functions  ; 56                                              ;
+;     Dedicated logic registers      ; 30                                              ;
+; Total registers                    ; 30                                              ;
+; Total pins                         ; 71                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
+; UFM blocks                         ; 0                                               ;
+; ADC blocks                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                              ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                           ; Setting            ; Default Value      ;
++------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                           ; 10M50DAF484C7G     ;                    ;
+; Top-level entity name                                            ; main               ; main               ;
+; Family name                                                      ; MAX 10             ; Cyclone V          ;
+; Use smart compilation                                            ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                      ; Off                ; Off                ;
+; Restructure Multiplexers                                         ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                              ; Off                ; Off                ;
+; Preserve fewer node names                                        ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                    ; Enable             ; Enable             ;
+; Verilog Version                                                  ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                     ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                         ; Auto               ; Auto               ;
+; Safe State Machine                                               ; Off                ; Off                ;
+; Extract Verilog State Machines                                   ; On                 ; On                 ;
+; Extract VHDL State Machines                                      ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                       ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                   ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                          ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                        ; On                 ; On                 ;
+; Parallel Synthesis                                               ; On                 ; On                 ;
+; DSP Block Balancing                                              ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                               ; On                 ; On                 ;
+; Power-Up Don't Care                                              ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                     ; Off                ; Off                ;
+; Remove Duplicate Registers                                       ; On                 ; On                 ;
+; Ignore CARRY Buffers                                             ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                           ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                            ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                        ; Off                ; Off                ;
+; Ignore LCELL Buffers                                             ; Off                ; Off                ;
+; Ignore SOFT Buffers                                              ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                   ; Off                ; Off                ;
+; Optimization Technique                                           ; Balanced           ; Balanced           ;
+; Carry Chain Length                                               ; 70                 ; 70                 ;
+; Auto Carry Chains                                                ; On                 ; On                 ;
+; Auto Open-Drain Pins                                             ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                            ; Off                ; Off                ;
+; Auto ROM Replacement                                             ; On                 ; On                 ;
+; Auto RAM Replacement                                             ; On                 ; On                 ;
+; Auto DSP Block Replacement                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                  ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                  ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                    ; On                 ; On                 ;
+; Strict RAM Replacement                                           ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                           ; Off                ; Off                ;
+; Auto RAM Block Balancing                                         ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                ; Off                ; Off                ;
+; Auto Resource Sharing                                            ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                               ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                    ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing              ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                ; Off                ; Off                ;
+; Timing-Driven Synthesis                                          ; On                 ; On                 ;
+; Report Parameter Settings                                        ; On                 ; On                 ;
+; Report Source Assignments                                        ; On                 ; On                 ;
+; Report Connectivity Checks                                       ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                               ; Off                ; Off                ;
+; Synchronization Register Chain Length                            ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                              ; Normal compilation ; Normal compilation ;
+; HDL message level                                                ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                  ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report         ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report               ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report        ; 100                ; 100                ;
+; Clock MUX Protection                                             ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                      ; Off                ; Off                ;
+; Block Design Naming                                              ; Auto               ; Auto               ;
+; SDC constraint protection                                        ; Off                ; Off                ;
+; Synthesis Effort                                                 ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal     ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                             ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                               ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                      ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                           ; On                 ; On                 ;
++------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 16          ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-16        ;   0.0%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                           ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                       ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
+; main.v                           ; yes             ; User Verilog HDL File        ; C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v        ;         ;
+; tick_1hz.v                       ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/tick_1hz.v    ;         ;
+; seg7_letter.v                    ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/seg7_letter.v ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                       ;
++---------------------------------------------+---------------------+
+; Resource                                    ; Usage               ;
++---------------------------------------------+---------------------+
+; Estimated Total logic elements              ; 56                  ;
+;                                             ;                     ;
+; Total combinational functions               ; 56                  ;
+; Logic element usage by number of LUT inputs ;                     ;
+;     -- 4 input functions                    ; 8                   ;
+;     -- 3 input functions                    ; 8                   ;
+;     -- <=2 input functions                  ; 40                  ;
+;                                             ;                     ;
+; Logic elements by mode                      ;                     ;
+;     -- normal mode                          ; 31                  ;
+;     -- arithmetic mode                      ; 25                  ;
+;                                             ;                     ;
+; Total registers                             ; 30                  ;
+;     -- Dedicated logic registers            ; 30                  ;
+;     -- I/O registers                        ; 0                   ;
+;                                             ;                     ;
+; I/O pins                                    ; 71                  ;
+;                                             ;                     ;
+; Embedded Multiplier 9-bit elements          ; 0                   ;
+;                                             ;                     ;
+; Maximum fan-out node                        ; MAX10_CLK1_50~input ;
+; Maximum fan-out                             ; 30                  ;
+; Total fan-out                               ; 311                 ;
+; Average fan-out                             ; 1.36                ;
++---------------------------------------------+---------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                  ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name   ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------+-------------+--------------+
+; |main                      ; 56 (7)              ; 30 (3)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 71   ; 0            ; 0          ; |main                 ; main        ; work         ;
+;    |seg7_letter:L|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|seg7_letter:L   ; seg7_letter ; work         ;
+;    |seg7_letter:R|         ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|seg7_letter:R   ; seg7_letter ; work         ;
+;    |tick_1hz:u_tick|       ; 47 (47)             ; 27 (27)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |main|tick_1hz:u_tick ; tick_1hz    ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                            ;
++----------------------------------------+--------------------------------------+
+; Register name                          ; Reason for Removal                   ;
++----------------------------------------+--------------------------------------+
+; msg~0                                  ; Stuck at GND due to stuck port clock ;
+; msg~1                                  ; Stuck at GND due to stuck port clock ;
+; msg~2                                  ; Stuck at GND due to stuck port clock ;
+; msg~3                                  ; Stuck at GND due to stuck port clock ;
+; msg~4                                  ; Stuck at GND due to stuck port clock ;
+; msg~5                                  ; Stuck at GND due to stuck port clock ;
+; msg~6                                  ; Stuck at GND due to stuck port clock ;
+; msg~7                                  ; Stuck at GND due to stuck port clock ;
+; msg~8                                  ; Stuck at GND due to stuck port clock ;
+; msg~9                                  ; Stuck at GND due to stuck port clock ;
+; msg~10                                 ; Stuck at GND due to stuck port clock ;
+; msg~11                                 ; Stuck at GND due to stuck port clock ;
+; msg~12                                 ; Stuck at GND due to stuck port clock ;
+; msg~13                                 ; Stuck at GND due to stuck port clock ;
+; msg~14                                 ; Stuck at GND due to stuck port clock ;
+; Total Number of Removed Registers = 15 ;                                      ;
++----------------------------------------+--------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 30    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 30    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 3     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: tick_1hz:u_tick ;
++----------------+----------+----------------------------------+
+; Parameter Name ; Value    ; Type                             ;
++----------------+----------+----------------------------------+
+; CLK_HZ         ; 50000000 ; Signed Integer                   ;
++----------------+----------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 71                          ;
+; cycloneiii_ff         ; 30                          ;
+;     CLR               ; 27                          ;
+;     ENA CLR           ; 3                           ;
+; cycloneiii_lcell_comb ; 61                          ;
+;     arith             ; 25                          ;
+;         2 data inputs ; 25                          ;
+;     normal            ; 36                          ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 14                          ;
+;         3 data inputs ; 8                           ;
+;         4 data inputs ; 8                           ;
+;                       ;                             ;
+; Max LUT depth         ; 4.50                        ;
+; Average LUT depth     ; 3.34                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+    Info: Processing started: Tue Oct 14 20:21:39 2025
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off main -c main
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file main.v
+    Info (12023): Found entity 1: main File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 1
+Warning (12019): Can't analyze file -- file seg7_dec.v is missing
+Warning (12019): Can't analyze file -- file mux_2_1_1bit.v is missing
+Warning (12019): Can't analyze file -- file comparator.v is missing
+Warning (12019): Can't analyze file -- file circuit_A.v is missing
+Warning (12019): Can't analyze file -- file circuit_B.v is missing
+Warning (12019): Can't analyze file -- file bin_to_dec.v is missing
+Warning (12019): Can't analyze file -- file FA.v is missing
+Warning (12019): Can't analyze file -- file adder_4bit.v is missing
+Warning (12019): Can't analyze file -- file circuit_A_v2.v is missing
+Warning (12019): Can't analyze file -- file bin_to_dec_v2.v is missing
+Warning (12019): Can't analyze file -- file checkBCD.v is missing
+Warning (12019): Can't analyze file -- file bin_to_dec_v3.v is missing
+Warning (12019): Can't analyze file -- file BCD_Adder_1bit.v is missing
+Warning (12019): Can't analyze file -- file BCD_Adder_2Dig.v is missing
+Warning (12019): Can't analyze file -- file convert_6bit_to_BCD.v is missing
+Warning (12019): Can't analyze file -- file bin6_to_bcd.v is missing
+Warning (12019): Can't analyze file -- file bcd7seg.v is missing
+Warning (12019): Can't analyze file -- file part1.v is missing
+Warning (12019): Can't analyze file -- file part2.v is missing
+Warning (12019): Can't analyze file -- file part3.v is missing
+Warning (12019): Can't analyze file -- file D_Latch.v is missing
+Warning (12019): Can't analyze file -- file Pos_Edge_Trigger.v is missing
+Warning (12019): Can't analyze file -- file memory_element.v is missing
+Warning (12019): Can't analyze file -- file TFF_Counter_8bit.v is missing
+Warning (12019): Can't analyze file -- file DecaDecoder.v is missing
+Warning (12019): Can't analyze file -- file ShifRegister_16bit.v is missing
+Info (12021): Found 1 design units, including 1 entities, in source file counter_lpm.v
+    Info (12023): Found entity 1: Counter_LPM File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/Counter_LPM.v Line: 40
+Warning (12019): Can't analyze file -- file counter_1sec.v is missing
+Warning (12019): Can't analyze file -- file displayPattern.v is missing
+Warning (12019): Can't analyze file -- file count_updown.v is missing
+Info (12021): Found 1 design units, including 1 entities, in source file tflipflop_8bits.v
+    Info (12023): Found entity 1: TFlipFlop_8bits File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/TFlipFlop_8bits.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file tflipflop_1bit.v
+    Info (12023): Found entity 1: TFlipFlop_1bit File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/TFlipFlop_1bit.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file counter_1s.v
+    Info (12023): Found entity 1: counter_1s File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/counter_1s.v Line: 1
+Warning (12019): Can't analyze file -- file shiftRegister_16bit.v is missing
+Info (12127): Elaborating entity "main" for the top level hierarchy
+Warning (10030): Net "msg.data_a" at main.v(121) has no driver or initial value, using a default initial value '0' File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 121
+Warning (10030): Net "msg.waddr_a" at main.v(121) has no driver or initial value, using a default initial value '0' File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 121
+Warning (10030): Net "msg.we_a" at main.v(121) has no driver or initial value, using a default initial value '0' File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 121
+Warning (10034): Output port "LEDR" at main.v(5) has no driver File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 5
+Warning (10034): Output port "HEX2" at main.v(8) has no driver File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 8
+Warning (10034): Output port "HEX3" at main.v(9) has no driver File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 9
+Warning (10034): Output port "HEX4" at main.v(10) has no driver File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 10
+Warning (10034): Output port "HEX5" at main.v(12) has no driver File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 12
+Warning (12125): Using design file tick_1hz.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: tick_1hz File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/tick_1hz.v Line: 2
+Info (12128): Elaborating entity "tick_1hz" for hierarchy "tick_1hz:u_tick" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 118
+Warning (12125): Using design file seg7_letter.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: seg7_letter File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/seg7_letter.v Line: 2
+Info (12128): Elaborating entity "seg7_letter" for hierarchy "seg7_letter:L" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 135
+Critical Warning (127005): Memory depth (8) in the design file differs from memory depth (5) in the Memory Initialization File "C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/db/main.ram0_main_3dde57.hdl.mif" -- setting initial value for remaining addresses to 0
+Info (276014): Found 1 instances of uninferred RAM logic
+    Info (276013): RAM logic "msg" is uninferred because MIF is not supported for the selected family File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 121
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 5
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 5
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 5
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 5
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 5
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 5
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 5
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 5
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 5
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 5
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 6
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 6
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 7
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 7
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 8
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 8
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 8
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 8
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 8
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 8
+    Warning (13410): Pin "HEX2[6]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 8
+    Warning (13410): Pin "HEX2[7]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 8
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 9
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 9
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 9
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 9
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 9
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 9
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 9
+    Warning (13410): Pin "HEX3[7]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 9
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 10
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 10
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 10
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 10
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 10
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 10
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 10
+    Warning (13410): Pin "HEX4[7]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 10
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 12
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 12
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 12
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 12
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 12
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 12
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 12
+    Warning (13410): Pin "HEX5[7]" is stuck at GND File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 12
+Info (286030): Timing-Driven Synthesis is running
+Warning (20013): Ignored 24 assignments for entity "DE10_LITE_Golden_Top" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity DE10_LITE_Golden_Top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity DE10_LITE_Golden_Top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -entity DE10_LITE_Golden_Top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_PRESERVE_HIGH_SPEED_TILES ON -entity DE10_LITE_Golden_Top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IGNORE_SOURCE_FILE_CHANGES OFF -entity DE10_LITE_Golden_Top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ALWAYS_USE_QXP_NETLIST OFF -entity DE10_LITE_Golden_Top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_COLOR 16764057 -entity DE10_LITE_Golden_Top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_ASSIGNMENTS ON -entity DE10_LITE_Golden_Top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_ASSIGNMENTS REPLACE_CONFLICTING -entity DE10_LITE_Golden_Top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_EXISTING_LOGICLOCK_REGIONS UPDATE_CONFLICTING -entity DE10_LITE_Golden_Top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PIN_ASSIGNMENTS ON -entity DE10_LITE_Golden_Top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_IMPORT_PROMOTE_ASSIGNMENTS ON -entity DE10_LITE_Golden_Top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_TYPE STANDARD_PARTITION -entity DE10_LITE_Golden_Top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ALLOW_MULTIPLE_PERSONAS OFF -entity DE10_LITE_Golden_Top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ASD_REGION_ID 1 -entity DE10_LITE_Golden_Top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name CROSS_BOUNDARY_OPTIMIZATIONS OFF -entity DE10_LITE_Golden_Top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_CONSTANTS_ON_INPUTS ON -entity DE10_LITE_Golden_Top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PROPAGATE_INVERSIONS_ON_INPUTS ON -entity DE10_LITE_Golden_Top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name REMOVE_LOGIC_ON_UNCONNECTED_OUTPUTS ON -entity DE10_LITE_Golden_Top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_INPUTS ON -entity DE10_LITE_Golden_Top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name MERGE_EQUIVALENT_BIDIRS ON -entity DE10_LITE_Golden_Top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity DE10_LITE_Golden_Top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity DE10_LITE_Golden_Top -section_id Top was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity DE10_LITE_Golden_Top -section_id Top was ignored
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 11 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 3
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 3
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 3
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 3
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 3
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 3
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 3
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 3
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 3
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 3
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/S0l1d/01-Advanced DD/QuartusLite/DE10_Board/Projects/Lab_04/main.v Line: 4
+Info (21057): Implemented 128 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 13 input pins
+    Info (21059): Implemented 58 output pins
+    Info (21061): Implemented 57 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 126 warnings
+    Info: Peak virtual memory: 4859 megabytes
+    Info: Processing ended: Tue Oct 14 20:21:47 2025
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:19
+
+

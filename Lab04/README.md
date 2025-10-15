@@ -73,6 +73,7 @@ seg7Decoder Tens(w_Q[7:4], HEX1);
 
 ### FPGA Board Photo
 ![FPGA Board – 8-bit Counter Output]<br/>
+<img src="img/part1.gif" alt="part1" width="500"/>
 
 ---
 
@@ -115,12 +116,13 @@ seg7Decoder Tens(w_Q[7:4], HEX1);
 
 ### Block Diagram
 ![Block Diagram – 8-bit counter_16bit Module]<br/>
-<img src="img/Lab04_part2.png" alt="part1" width="500"/>
+<img src="img/Lab04_part2.png" alt="part2" width="500"/>
 
 ---
 
 ### FPGA Board Photo
 ![FPGA Board – 8-bit counter_16bit Output]<br/>
+<img src="img/part2.gif" alt="part2" width="500"/>
 
 ---
 
@@ -164,11 +166,12 @@ seg7Decoder Tens(w_Q[7:4], HEX1);
 
 ### Block Diagram
 ![Block Diagram – LPM Counter]<br/>
-<img src="img/Lab04_part3.png" alt="part1" width="500"/>
+<img src="img/Lab04_part3.png" alt="part3" width="500"/>
 ---
 
 ### FPGA Board Photo
 ![FPGA Board – LPM Counter Output]<br/>
+<img src="img/part3.gif" alt="part3" width="500"/>
 
 ---
 
@@ -226,11 +229,12 @@ seg7Decoder h0(.i_bin(digit), .o_HEX(HEX0));
 
 ### Block Diagram
 ![Block Diagram – Decimal Digit Counter]<br/>
-<img src="img/Lab04_part4.png" alt="part1" width="500"/>
+<img src="img/Lab04_part4.png" alt="part4" width="500"/>
 ---
 
 ### FPGA Board Photo
 ![FPGA Board – Decimal Counter Output]<br/>
+<img src="img/part4.gif" alt="part4" width="500"/>
 
 ---
 
@@ -249,6 +253,27 @@ Characters of the word “HELLO” are encoded as numerical codes and shifted cy
 | `HEX1–HEX0` | Display scrolling message |
 | `tick_1hz` | Generates 1-second tick signal |
 
+stores the word HELLO using simple numeric codes:
+
+0 → H
+
+1 → E
+
+2 → L
+
+3 → O
+
+So msg = [H, E, L, L, O].
+
+Each code (3 bits wide) will later be translated to the proper 7-segment pattern by seg7_letter.
+
+'i' selects the current “window position” in the message.
+
+It increments by 1 every tick (once per second).
+
+When it reaches 4, it wraps around to 0.
+
+➜ In effect, the index cycles through 0–4 repeatedly once per second.
 ---
 
 ### Verilog Code
@@ -256,19 +281,18 @@ Characters of the word “HELLO” are encoded as numerical codes and shifted cy
 ```verilog
 wire rst_n = KEY[0];
 wire tick;
-
 tick_1hz u_tick(.clk(MAX10_CLK1_50), .rst_n(rst_n), .tick(tick));
 
-// Character codes: H=0, E=1, L=2, O=3
+// HELLO as codes: H=0, E=1, L=2, L=2, O=3
 reg [2:0] msg [0:4];
 initial begin
-  msg[0]=3'd0; msg[1]=3'd1; msg[2]=3'd2; msg[3]=3'd2; msg[4]=3'd3;
+	msg[0]=3'd0; msg[1]=3'd1; msg[2]=3'd2; msg[3]=3'd2; msg[4]=3'd3;
 end
 
-reg [2:0] i;
+reg [2:0] i;  // 0..4, index of left character in the window
 always @(posedge MAX10_CLK1_50 or negedge rst_n) begin
-  if (!rst_n) i <= 3'd0;
-  else if (tick) i <= (i==3'd4) ? 3'd0 : i + 3'd1;
+if (!rst_n) i <= 3'd0;
+else if (tick) i <= (i==3'd4) ? 3'd0 : i + 3'd1;
 end
 
 wire [2:0] left  = msg[i];
@@ -282,12 +306,12 @@ seg7_letter R (.code(right), .HEX(HEX0));
 
 ### Block Diagram
 ![Block Diagram – Scrolling HELLO Display]<br/>
-<img src="img/Lab04_part5.png" alt="part1" width="500"/>
+<img src="img/Lab04_part5.png" alt="part5" width="500"/>
 ---
 
 ### FPGA Board Photo
 ![FPGA Board – HELLO Display Output]<br/>
-
+<img src="img/part5.gif" alt="part5" width="500"/>
 ---
 
 ## Discussion
