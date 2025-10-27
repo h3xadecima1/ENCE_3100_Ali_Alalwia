@@ -5,6 +5,7 @@
 **Clock Frequency:** 50 MHz  
 **Objective:** Detect the word **“hello”** sent via UART and blink the word **“HELLO”** on the HEX displays for 3 seconds.  
 
+<img src="img/Lab07.gif" alt="Lab07_animation" width="500"/>
 ---
 
 ## 🧠 1. Abstract
