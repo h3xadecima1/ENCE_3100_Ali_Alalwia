@@ -1,0 +1,10 @@
+
+State Machine - |main|FSM_Word_Detecter:word_detector|state
+Name state.S_SHOW state.S_DONE state.S_HELL state.S_HEL state.S_HE state.S_H state.S_IDLE 
+state.S_IDLE 0 0 0 0 0 0 0 
+state.S_H 0 0 0 0 0 1 1 
+state.S_HE 0 0 0 0 1 0 1 
+state.S_HEL 0 0 0 1 0 0 1 
+state.S_HELL 0 0 1 0 0 0 1 
+state.S_DONE 0 1 0 0 0 0 1 
+state.S_SHOW 1 0 0 0 0 0 1 
