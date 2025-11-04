@@ -47,11 +47,11 @@ The system comprises modular Verilog files implementing the following components
 
 ---
 ## Board output
-<img src="img/board_output.GIF" alt="Board Output" width="500"/>
+<img src="img/board_output.gif" alt="Board Output" width="500"/>
 
 
 ## Putty(UART output)
-<img src="img/putty_output.GIF" alt="Putty Output" width="500"/>
+<img src="img/putty_output.gif" alt="Putty Output" width="500"/>
 
 
 ## 3. Top-Level Integration (`main.v`)
