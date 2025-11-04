@@ -1,0 +1,565 @@
+|main
+MAX10_CLK1_50 => MAX10_CLK1_50.IN3
+KEY[0] => ~NO_FANOUT~
+KEY[1] => ~NO_FANOUT~
+SW[0] => w_user_input[0].IN2
+SW[1] => w_user_input[1].IN2
+SW[2] => w_user_input[2].IN2
+SW[3] => w_user_input[3].IN2
+SW[4] => ~NO_FANOUT~
+SW[5] => ~NO_FANOUT~
+SW[6] => ~NO_FANOUT~
+SW[7] => ~NO_FANOUT~
+SW[8] => w_reset_raw.IN1
+SW[9] => w_clock_raw.IN1
+GPIO[0] <> <UNC>
+GPIO[1] <> <UNC>
+GPIO[2] <> <UNC>
+GPIO[3] <> <UNC>
+GPIO[4] <> <UNC>
+GPIO[5] <> <UNC>
+GPIO[6] <> <UNC>
+GPIO[7] <> <UNC>
+GPIO[8] <> <UNC>
+GPIO[9] <> <UNC>
+GPIO[10] <> <UNC>
+GPIO[11] <> <UNC>
+GPIO[12] <> <UNC>
+GPIO[13] <> <UNC>
+GPIO[14] <> <UNC>
+GPIO[15] <> <UNC>
+GPIO[16] <> <UNC>
+GPIO[17] <> <UNC>
+GPIO[18] <> <UNC>
+GPIO[19] <> <UNC>
+GPIO[20] <> <UNC>
+GPIO[21] <> <UNC>
+GPIO[22] <> <UNC>
+GPIO[23] <> <UNC>
+GPIO[24] <> <UNC>
+GPIO[25] <> <UNC>
+GPIO[26] <> <UNC>
+GPIO[27] <> <UNC>
+GPIO[28] <> <UNC>
+GPIO[29] <> <UNC>
+GPIO[30] <> <UNC>
+GPIO[31] <> <UNC>
+GPIO[32] <> <UNC>
+GPIO[33] <> GPIO[33]
+GPIO[34] <> <UNC>
+GPIO[35] <> <UNC>
+LEDR[0] << w_rOut[0].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] << w_rOut[1].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] << w_rOut[2].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] << w_rOut[3].DB_MAX_OUTPUT_PORT_TYPE
+LEDR[4] << <GND>
+LEDR[5] << <GND>
+LEDR[6] << <GND>
+LEDR[7] << <GND>
+LEDR[8] << <GND>
+LEDR[9] << w_carry.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[0] << seg7Decoder:SEG0.o_HEX
+HEX0[1] << seg7Decoder:SEG0.o_HEX
+HEX0[2] << seg7Decoder:SEG0.o_HEX
+HEX0[3] << seg7Decoder:SEG0.o_HEX
+HEX0[4] << seg7Decoder:SEG0.o_HEX
+HEX0[5] << seg7Decoder:SEG0.o_HEX
+HEX0[6] << seg7Decoder:SEG0.o_HEX
+HEX0[7] << seg7Decoder:SEG0.o_HEX
+HEX1[0] << seg7Decoder:SEG1.o_HEX
+HEX1[1] << seg7Decoder:SEG1.o_HEX
+HEX1[2] << seg7Decoder:SEG1.o_HEX
+HEX1[3] << seg7Decoder:SEG1.o_HEX
+HEX1[4] << seg7Decoder:SEG1.o_HEX
+HEX1[5] << seg7Decoder:SEG1.o_HEX
+HEX1[6] << seg7Decoder:SEG1.o_HEX
+HEX1[7] << seg7Decoder:SEG1.o_HEX
+HEX2[0] << seg7Decoder:SEG2.o_HEX
+HEX2[1] << seg7Decoder:SEG2.o_HEX
+HEX2[2] << seg7Decoder:SEG2.o_HEX
+HEX2[3] << seg7Decoder:SEG2.o_HEX
+HEX2[4] << seg7Decoder:SEG2.o_HEX
+HEX2[5] << seg7Decoder:SEG2.o_HEX
+HEX2[6] << seg7Decoder:SEG2.o_HEX
+HEX2[7] << seg7Decoder:SEG2.o_HEX
+HEX4[0] << seg7Decoder:SEG4.o_HEX
+HEX4[1] << seg7Decoder:SEG4.o_HEX
+HEX4[2] << seg7Decoder:SEG4.o_HEX
+HEX4[3] << seg7Decoder:SEG4.o_HEX
+HEX4[4] << seg7Decoder:SEG4.o_HEX
+HEX4[5] << seg7Decoder:SEG4.o_HEX
+HEX4[6] << seg7Decoder:SEG4.o_HEX
+HEX4[7] << seg7Decoder:SEG4.o_HEX
+HEX5[0] << seg7Decoder:SEG5.o_HEX
+HEX5[1] << seg7Decoder:SEG5.o_HEX
+HEX5[2] << seg7Decoder:SEG5.o_HEX
+HEX5[3] << seg7Decoder:SEG5.o_HEX
+HEX5[4] << seg7Decoder:SEG5.o_HEX
+HEX5[5] << seg7Decoder:SEG5.o_HEX
+HEX5[6] << seg7Decoder:SEG5.o_HEX
+HEX5[7] << seg7Decoder:SEG5.o_HEX
+
+
+|main|debounce_reset:db_reset
+clk => reset_clean~reg0.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => count[10].CLK
+clk => count[11].CLK
+clk => count[12].CLK
+clk => count[13].CLK
+clk => count[14].CLK
+clk => count[15].CLK
+clk => count[16].CLK
+clk => count[17].CLK
+clk => count[18].CLK
+clk => count[19].CLK
+clk => sw_sync.CLK
+sw_in => sw_sync.DATAIN
+reset_clean <= reset_clean~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|debounce_clock:db_clock
+clk => sw_prev.CLK
+clk => step_pulse~reg0.CLK
+clk => sw_stable.CLK
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+clk => count[8].CLK
+clk => count[9].CLK
+clk => count[10].CLK
+clk => count[11].CLK
+clk => count[12].CLK
+clk => count[13].CLK
+clk => count[14].CLK
+clk => count[15].CLK
+clk => count[16].CLK
+clk => count[17].CLK
+clk => count[18].CLK
+clk => count[19].CLK
+clk => sw_sync.CLK
+sw_in => sw_sync.DATAIN
+step_pulse <= step_pulse~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|Accumulator_A:AccA
+MainClock => regA[0].CLK
+MainClock => regA[1].CLK
+MainClock => regA[2].CLK
+MainClock => regA[3].CLK
+ClearA => regA[0].ACLR
+ClearA => regA[1].ACLR
+ClearA => regA[2].ACLR
+ClearA => regA[3].ACLR
+LatchA => regA[3].ENA
+LatchA => regA[2].ENA
+LatchA => regA[1].ENA
+LatchA => regA[0].ENA
+EnableA => IB_BUS[0].OE
+EnableA => IB_BUS[1].OE
+EnableA => IB_BUS[2].OE
+EnableA => IB_BUS[3].OE
+IB_BUS[0] <> IB_BUS[0]
+IB_BUS[1] <> IB_BUS[1]
+IB_BUS[2] <> IB_BUS[2]
+IB_BUS[3] <> IB_BUS[3]
+A[0] <= regA[0].DB_MAX_OUTPUT_PORT_TYPE
+A[1] <= regA[1].DB_MAX_OUTPUT_PORT_TYPE
+A[2] <= regA[2].DB_MAX_OUTPUT_PORT_TYPE
+A[3] <= regA[3].DB_MAX_OUTPUT_PORT_TYPE
+AluA[0] <= regA[0].DB_MAX_OUTPUT_PORT_TYPE
+AluA[1] <= regA[1].DB_MAX_OUTPUT_PORT_TYPE
+AluA[2] <= regA[2].DB_MAX_OUTPUT_PORT_TYPE
+AluA[3] <= regA[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|seg7Decoder:SEG1
+i_bin[0] => Decoder0.IN3
+i_bin[1] => Decoder0.IN2
+i_bin[2] => Decoder0.IN1
+i_bin[3] => Decoder0.IN0
+o_HEX[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[7] <= <VCC>
+
+
+|main|Accumulator_B:AccB
+MainClock => regB[0].CLK
+MainClock => regB[1].CLK
+MainClock => regB[2].CLK
+MainClock => regB[3].CLK
+ClearB => regB[0].ACLR
+ClearB => regB[1].ACLR
+ClearB => regB[2].ACLR
+ClearB => regB[3].ACLR
+LatchB => regB[3].ENA
+LatchB => regB[2].ENA
+LatchB => regB[1].ENA
+LatchB => regB[0].ENA
+EnableB => IB_BUS[0].OE
+EnableB => IB_BUS[1].OE
+EnableB => IB_BUS[2].OE
+EnableB => IB_BUS[3].OE
+IB_BUS[0] <> IB_BUS[0]
+IB_BUS[1] <> IB_BUS[1]
+IB_BUS[2] <> IB_BUS[2]
+IB_BUS[3] <> IB_BUS[3]
+B[0] <= regB[0].DB_MAX_OUTPUT_PORT_TYPE
+B[1] <= regB[1].DB_MAX_OUTPUT_PORT_TYPE
+B[2] <= regB[2].DB_MAX_OUTPUT_PORT_TYPE
+B[3] <= regB[3].DB_MAX_OUTPUT_PORT_TYPE
+AluB[0] <= regB[0].DB_MAX_OUTPUT_PORT_TYPE
+AluB[1] <= regB[1].DB_MAX_OUTPUT_PORT_TYPE
+AluB[2] <= regB[2].DB_MAX_OUTPUT_PORT_TYPE
+AluB[3] <= regB[3].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|seg7Decoder:SEG2
+i_bin[0] => Decoder0.IN3
+i_bin[1] => Decoder0.IN2
+i_bin[2] => Decoder0.IN1
+i_bin[3] => Decoder0.IN0
+o_HEX[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[7] <= <VCC>
+
+
+|main|Arithmetic_Unit:ALU
+EnableALU => IB_ALU[0].OE
+EnableALU => IB_ALU[1].OE
+EnableALU => IB_ALU[2].OE
+EnableALU => IB_ALU[3].OE
+AddSub => result.OUTPUTSELECT
+AddSub => result[3].OUTPUTSELECT
+AddSub => result[2].OUTPUTSELECT
+AddSub => result[1].OUTPUTSELECT
+AddSub => result[0].OUTPUTSELECT
+A[0] => Add0.IN8
+A[0] => Add1.IN4
+A[1] => Add0.IN7
+A[1] => Add1.IN3
+A[2] => Add0.IN6
+A[2] => Add1.IN2
+A[3] => Add0.IN5
+A[3] => Add1.IN1
+B[0] => Add1.IN8
+B[0] => Add0.IN4
+B[1] => Add1.IN7
+B[1] => Add0.IN3
+B[2] => Add1.IN6
+B[2] => Add0.IN2
+B[3] => Add1.IN5
+B[3] => Add0.IN1
+Carry <= result.DB_MAX_OUTPUT_PORT_TYPE
+IB_ALU[0] <> IB_ALU[0]
+IB_ALU[1] <> IB_ALU[1]
+IB_ALU[2] <> IB_ALU[2]
+IB_ALU[3] <> IB_ALU[3]
+
+
+|main|InRegister:InReg
+EnableIN => IB_BUS[0].OE
+EnableIN => IB_BUS[1].OE
+EnableIN => IB_BUS[2].OE
+EnableIN => IB_BUS[3].OE
+DataIn[0] => IB_BUS[0].DATAIN
+DataIn[1] => IB_BUS[1].DATAIN
+DataIn[2] => IB_BUS[2].DATAIN
+DataIn[3] => IB_BUS[3].DATAIN
+IB_BUS[0] <> IB_BUS[0]
+IB_BUS[1] <> IB_BUS[1]
+IB_BUS[2] <> IB_BUS[2]
+IB_BUS[3] <> IB_BUS[3]
+
+
+|main|seg7Decoder:SEG4
+i_bin[0] => Decoder0.IN3
+i_bin[1] => Decoder0.IN2
+i_bin[2] => Decoder0.IN1
+i_bin[3] => Decoder0.IN0
+o_HEX[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[7] <= <VCC>
+
+
+|main|OutRegister:OutReg
+MainClock => rOut[0]~reg0.CLK
+MainClock => rOut[1]~reg0.CLK
+MainClock => rOut[2]~reg0.CLK
+MainClock => rOut[3]~reg0.CLK
+MainReset => rOut[0]~reg0.ACLR
+MainReset => rOut[1]~reg0.ACLR
+MainReset => rOut[2]~reg0.ACLR
+MainReset => rOut[3]~reg0.ACLR
+EnableOut => rOut[3]~reg0.ENA
+EnableOut => rOut[2]~reg0.ENA
+EnableOut => rOut[1]~reg0.ENA
+EnableOut => rOut[0]~reg0.ENA
+rOut[0] <= rOut[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rOut[1] <= rOut[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rOut[2] <= rOut[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+rOut[3] <= rOut[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|seg7Decoder:SEG5
+i_bin[0] => Decoder0.IN3
+i_bin[1] => Decoder0.IN2
+i_bin[2] => Decoder0.IN1
+i_bin[3] => Decoder0.IN0
+o_HEX[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[7] <= <VCC>
+
+
+|main|InstructionReg:InstrReg
+MainClock => regInstr[0].CLK
+MainClock => regInstr[1].CLK
+MainClock => regInstr[2].CLK
+MainClock => regInstr[3].CLK
+ClearInstr => regInstr[0].ACLR
+ClearInstr => regInstr[1].ACLR
+ClearInstr => regInstr[2].ACLR
+ClearInstr => regInstr[3].ACLR
+LatchInstr => regInstr[3].ENA
+LatchInstr => regInstr[2].ENA
+LatchInstr => regInstr[1].ENA
+LatchInstr => regInstr[0].ENA
+EnableInstr => IB_BUS[0].OE
+EnableInstr => IB_BUS[1].OE
+EnableInstr => IB_BUS[2].OE
+EnableInstr => IB_BUS[3].OE
+Data[0] => regInstr[0].DATAIN
+Data[1] => regInstr[1].DATAIN
+Data[2] => regInstr[2].DATAIN
+Data[3] => regInstr[3].DATAIN
+Instr[0] <= <GND>
+Instr[1] <= <GND>
+Instr[2] <= <GND>
+Instr[3] <= <GND>
+ToInstr[0] <= regInstr[0].DB_MAX_OUTPUT_PORT_TYPE
+ToInstr[1] <= regInstr[1].DB_MAX_OUTPUT_PORT_TYPE
+ToInstr[2] <= regInstr[2].DB_MAX_OUTPUT_PORT_TYPE
+ToInstr[3] <= regInstr[3].DB_MAX_OUTPUT_PORT_TYPE
+IB_BUS[0] <> IB_BUS[0]
+IB_BUS[1] <> IB_BUS[1]
+IB_BUS[2] <> IB_BUS[2]
+IB_BUS[3] <> IB_BUS[3]
+
+
+|main|ProgramCounter:ProgCounter
+MainClock => Counter[0]~reg0.CLK
+MainClock => Counter[1]~reg0.CLK
+MainClock => Counter[2]~reg0.CLK
+MainClock => Counter[3]~reg0.CLK
+ClearCounter => Counter[0]~reg0.ACLR
+ClearCounter => Counter[1]~reg0.ACLR
+ClearCounter => Counter[2]~reg0.ACLR
+ClearCounter => Counter[3]~reg0.ACLR
+EnableCount => Counter[3]~reg0.ENA
+EnableCount => Counter[2]~reg0.ENA
+EnableCount => Counter[1]~reg0.ENA
+EnableCount => Counter[0]~reg0.ENA
+Counter[0] <= Counter[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Counter[1] <= Counter[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Counter[2] <= Counter[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Counter[3] <= Counter[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|ROM_Nx8:ROM
+address[0] => data[4].DATAIN
+address[0] => data[0].DATAIN
+address[1] => data[5].DATAIN
+address[1] => data[1].DATAIN
+address[2] => data[6].DATAIN
+address[2] => data[2].DATAIN
+data[0] <= address[0].DB_MAX_OUTPUT_PORT_TYPE
+data[1] <= address[1].DB_MAX_OUTPUT_PORT_TYPE
+data[2] <= address[2].DB_MAX_OUTPUT_PORT_TYPE
+data[3] <= <GND>
+data[4] <= address[0].DB_MAX_OUTPUT_PORT_TYPE
+data[5] <= address[1].DB_MAX_OUTPUT_PORT_TYPE
+data[6] <= address[2].DB_MAX_OUTPUT_PORT_TYPE
+data[7] <= <GND>
+
+
+|main|FSM_MicroInstr:Controller
+clk => state~1.DATAIN
+reset => state~3.DATAIN
+IB_BUS[0] => ~NO_FANOUT~
+IB_BUS[1] => ~NO_FANOUT~
+IB_BUS[2] => ~NO_FANOUT~
+IB_BUS[3] => ~NO_FANOUT~
+LatchA <= LatchA.DB_MAX_OUTPUT_PORT_TYPE
+EnableA <= Selector0.DB_MAX_OUTPUT_PORT_TYPE
+LatchB <= LatchB.DB_MAX_OUTPUT_PORT_TYPE
+EnableALU <= EnableALU.DB_MAX_OUTPUT_PORT_TYPE
+AddSub <= AddSub.DB_MAX_OUTPUT_PORT_TYPE
+EnableIN <= EnableIN.DB_MAX_OUTPUT_PORT_TYPE
+EnableOut <= Selector1.DB_MAX_OUTPUT_PORT_TYPE
+LoadInstr <= EnableCount.DB_MAX_OUTPUT_PORT_TYPE
+EnableInstr <= EnableInstr.DB_MAX_OUTPUT_PORT_TYPE
+ToInstr[0] => Decoder0.IN3
+ToInstr[0] => Equal0.IN7
+ToInstr[1] => Decoder0.IN2
+ToInstr[1] => Equal0.IN6
+ToInstr[2] => Decoder0.IN1
+ToInstr[2] => Equal0.IN5
+ToInstr[3] => Decoder0.IN0
+ToInstr[3] => Equal0.IN4
+EnableCount <= EnableCount.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|seg7Decoder:SEG0
+i_bin[0] => Decoder0.IN3
+i_bin[1] => Decoder0.IN2
+i_bin[2] => Decoder0.IN1
+i_bin[3] => Decoder0.IN0
+o_HEX[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+o_HEX[7] <= <VCC>
+
+
+|main|UART_Debugger:uart_dbg
+clk_fast => clk_fast.IN1
+clk_step => trigger_send.IN1
+clk_step => prev_step.DATAIN
+A[0] => LessThan0.IN8
+A[0] => nibble_to_ascii.DATAB
+A[0] => Add0.IN2
+A[1] => LessThan0.IN7
+A[1] => nibble_to_ascii.DATAB
+A[1] => Add0.IN1
+A[2] => LessThan0.IN6
+A[2] => nibble_to_ascii.DATAB
+A[2] => Add0.IN0
+A[3] => LessThan0.IN5
+A[3] => nibble_to_ascii.DATAB
+A[3] => Add0.IN4
+B[0] => LessThan1.IN8
+B[0] => nibble_to_ascii.DATAB
+B[0] => Add1.IN2
+B[1] => LessThan1.IN7
+B[1] => nibble_to_ascii.DATAB
+B[1] => Add1.IN1
+B[2] => LessThan1.IN6
+B[2] => nibble_to_ascii.DATAB
+B[2] => Add1.IN0
+B[3] => LessThan1.IN5
+B[3] => nibble_to_ascii.DATAB
+B[3] => Add1.IN4
+BUS[0] => LessThan2.IN8
+BUS[0] => nibble_to_ascii.DATAB
+BUS[0] => Add2.IN2
+BUS[1] => LessThan2.IN7
+BUS[1] => nibble_to_ascii.DATAB
+BUS[1] => Add2.IN1
+BUS[2] => LessThan2.IN6
+BUS[2] => nibble_to_ascii.DATAB
+BUS[2] => Add2.IN0
+BUS[3] => LessThan2.IN5
+BUS[3] => nibble_to_ascii.DATAB
+BUS[3] => Add2.IN4
+CARRY => buffer.DATAB
+uart_tx <= uart_tx:UART_TX.tx
+
+
+|main|UART_Debugger:uart_dbg|uart_tx:UART_TX
+clk => tx~reg0.CLK
+clk => bit_index[0].CLK
+clk => bit_index[1].CLK
+clk => bit_index[2].CLK
+clk => bit_index[3].CLK
+clk => tx_busy~reg0.CLK
+clk => tx_shift[0].CLK
+clk => tx_shift[1].CLK
+clk => tx_shift[2].CLK
+clk => tx_shift[3].CLK
+clk => tx_shift[4].CLK
+clk => tx_shift[5].CLK
+clk => tx_shift[6].CLK
+clk => tx_shift[7].CLK
+clk => tx_shift[8].CLK
+clk => tx_shift[9].CLK
+clk => baud_tick.CLK
+clk => baud_cnt[0].CLK
+clk => baud_cnt[1].CLK
+clk => baud_cnt[2].CLK
+clk => baud_cnt[3].CLK
+clk => baud_cnt[4].CLK
+clk => baud_cnt[5].CLK
+clk => baud_cnt[6].CLK
+clk => baud_cnt[7].CLK
+clk => baud_cnt[8].CLK
+clk => baud_cnt[9].CLK
+clk => baud_cnt[10].CLK
+clk => baud_cnt[11].CLK
+clk => baud_cnt[12].CLK
+clk => baud_cnt[13].CLK
+clk => baud_cnt[14].CLK
+clk => baud_cnt[15].CLK
+tx_start => tx_shift.OUTPUTSELECT
+tx_start => tx_shift.OUTPUTSELECT
+tx_start => tx_shift.OUTPUTSELECT
+tx_start => tx_shift.OUTPUTSELECT
+tx_start => tx_shift.OUTPUTSELECT
+tx_start => tx_shift.OUTPUTSELECT
+tx_start => tx_shift.OUTPUTSELECT
+tx_start => tx_shift.OUTPUTSELECT
+tx_start => tx_shift.OUTPUTSELECT
+tx_start => tx_shift.OUTPUTSELECT
+tx_start => tx_busy.OUTPUTSELECT
+tx_start => bit_index.OUTPUTSELECT
+tx_start => bit_index.OUTPUTSELECT
+tx_start => bit_index.OUTPUTSELECT
+tx_start => bit_index.OUTPUTSELECT
+tx_data[0] => tx_shift.DATAB
+tx_data[1] => tx_shift.DATAB
+tx_data[2] => tx_shift.DATAB
+tx_data[3] => tx_shift.DATAB
+tx_data[4] => tx_shift.DATAB
+tx_data[5] => tx_shift.DATAB
+tx_data[6] => tx_shift.DATAB
+tx_data[7] => tx_shift.DATAB
+tx <= tx~reg0.DB_MAX_OUTPUT_PORT_TYPE
+tx_busy <= tx_busy~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+

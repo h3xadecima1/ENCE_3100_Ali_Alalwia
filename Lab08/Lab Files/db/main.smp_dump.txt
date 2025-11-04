@@ -1,0 +1,14 @@
+
+State Machine - |main|UART_Debugger:uart_dbg|state
+Name state.000 state.010 state.001 
+state.000 0 0 0 
+state.001 1 0 1 
+state.010 1 1 0 
+
+State Machine - |main|FSM_MicroInstr:Controller|state
+Name state.PHASE_3 state.PHASE_2 state.PHASE_1 state.IDLE state.PHASE_4 
+state.IDLE 0 0 0 0 0 
+state.PHASE_1 0 0 1 1 0 
+state.PHASE_2 0 1 0 1 0 
+state.PHASE_3 1 0 0 1 0 
+state.PHASE_4 0 0 0 1 1 

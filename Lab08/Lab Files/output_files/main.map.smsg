@@ -1,0 +1,6 @@
+Warning (10273): Verilog HDL warning at Arithmetic_Unit.v(22): extended using "x" or "z" File: C:/Users/S0l1d/OneDrive/Desktop/Lab_8_VSM_Ch/Lab_8_VSM_Template/Arithmetic_Unit.v Line: 22
+Warning (10273): Verilog HDL warning at InRegister.v(9): extended using "x" or "z" File: C:/Users/S0l1d/OneDrive/Desktop/Lab_8_VSM_Ch/Lab_8_VSM_Template/InRegister.v Line: 9
+Warning (10273): Verilog HDL warning at InstructionReg.v(24): extended using "x" or "z" File: C:/Users/S0l1d/OneDrive/Desktop/Lab_8_VSM_Ch/Lab_8_VSM_Template/InstructionReg.v Line: 24
+Info (10281): Verilog HDL Declaration information at UART_Debugger.v(20): object "uart_tx" differs only in case from object "UART_TX" in the same scope File: C:/Users/S0l1d/OneDrive/Desktop/Lab_8_VSM_Ch/Lab_8_VSM_Template/UART_Debugger.v Line: 20
+Warning (10273): Verilog HDL warning at accumulator_a.v(25): extended using "x" or "z" File: C:/Users/S0l1d/OneDrive/Desktop/Lab_8_VSM_Ch/Lab_8_VSM_Template/accumulator_a.v Line: 25
+Warning (10273): Verilog HDL warning at accumulator_b.v(24): extended using "x" or "z" File: C:/Users/S0l1d/OneDrive/Desktop/Lab_8_VSM_Ch/Lab_8_VSM_Template/accumulator_b.v Line: 24

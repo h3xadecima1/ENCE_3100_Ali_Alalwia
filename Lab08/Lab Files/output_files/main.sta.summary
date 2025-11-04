@@ -1,0 +1,101 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 85C Model Setup 'MAX10_CLK1_50'
+Slack : -4.330
+TNS   : -371.107
+
+Type  : Slow 1200mV 85C Model Setup 'debounce_clock:db_clock|step_pulse'
+Slack : -3.892
+TNS   : -46.676
+
+Type  : Slow 1200mV 85C Model Hold 'MAX10_CLK1_50'
+Slack : 0.325
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'debounce_clock:db_clock|step_pulse'
+Slack : 0.348
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'debounce_clock:db_clock|step_pulse'
+Slack : -0.799
+TNS   : -15.079
+
+Type  : Slow 1200mV 85C Model Removal 'debounce_clock:db_clock|step_pulse'
+Slack : 0.955
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'MAX10_CLK1_50'
+Slack : -3.000
+TNS   : -186.793
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'debounce_clock:db_clock|step_pulse'
+Slack : -1.403
+TNS   : -32.269
+
+Type  : Slow 1200mV 0C Model Setup 'MAX10_CLK1_50'
+Slack : -3.888
+TNS   : -329.899
+
+Type  : Slow 1200mV 0C Model Setup 'debounce_clock:db_clock|step_pulse'
+Slack : -3.498
+TNS   : -41.140
+
+Type  : Slow 1200mV 0C Model Hold 'MAX10_CLK1_50'
+Slack : 0.292
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'debounce_clock:db_clock|step_pulse'
+Slack : 0.313
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'debounce_clock:db_clock|step_pulse'
+Slack : -0.642
+TNS   : -11.510
+
+Type  : Slow 1200mV 0C Model Removal 'debounce_clock:db_clock|step_pulse'
+Slack : 0.881
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'MAX10_CLK1_50'
+Slack : -3.000
+TNS   : -186.793
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'debounce_clock:db_clock|step_pulse'
+Slack : -1.403
+TNS   : -32.269
+
+Type  : Fast 1200mV 0C Model Setup 'MAX10_CLK1_50'
+Slack : -1.253
+TNS   : -84.455
+
+Type  : Fast 1200mV 0C Model Setup 'debounce_clock:db_clock|step_pulse'
+Slack : -1.009
+TNS   : -9.317
+
+Type  : Fast 1200mV 0C Model Hold 'MAX10_CLK1_50'
+Slack : 0.143
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'debounce_clock:db_clock|step_pulse'
+Slack : 0.153
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'debounce_clock:db_clock|step_pulse'
+Slack : 0.122
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Removal 'debounce_clock:db_clock|step_pulse'
+Slack : 0.404
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'MAX10_CLK1_50'
+Slack : -3.000
+TNS   : -138.578
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'debounce_clock:db_clock|step_pulse'
+Slack : -1.000
+TNS   : -23.000
+
+------------------------------------------------------------

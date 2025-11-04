@@ -1,0 +1,104 @@
+`timescale 1ns / 1ps
+`default_nettype none
+
+module UART_Debugger #(
+    parameter CLK_FREQ = 50000000,
+    parameter BAUD     = 115200
+)(
+    input  wire        clk,
+    input  wire [3:0]  A,
+    input  wire [3:0]  B,
+    input  wire [3:0]  BUS,
+    input  wire        CARRY,
+    output wire        uart_tx
+);
+
+    // ------------------------------------------------------
+    // UART transmitter instance (your provided uart_tx)
+    // ------------------------------------------------------
+    wire tx_busy;
+    reg  tx_start;
+    reg  [7:0] tx_data;
+
+    uart_tx #(
+        .CLK_FREQ(CLK_FREQ),
+        .BAUD(BAUD)
+    ) UART_TX (
+        .clk(clk),
+        .tx_start(tx_start),
+        .tx_data(tx_data),
+        .tx(uart_tx),
+        .tx_busy(tx_busy)
+    );
+
+    // ------------------------------------------------------
+    // HEX to ASCII conversion
+    // ------------------------------------------------------
+    function [7:0] nibble_to_ascii(input [3:0] nib);
+        begin
+            if (nib < 10)
+                nibble_to_ascii = 8'd48 + nib; // '0'–'9'
+            else
+                nibble_to_ascii = 8'd55 + nib; // 'A'–'F'
+        end
+    endfunction
+
+    // ------------------------------------------------------
+    // FSM to send one message per clock cycle
+    // ------------------------------------------------------
+    reg [3:0] state = 0;
+    reg [7:0] buffer [0:15];
+    reg [3:0] idx;
+    reg [15:0] delay_counter = 0;
+
+    always @(posedge clk) begin
+        if (tx_busy) begin
+            tx_start <= 1'b0;
+        end else begin
+            case (state)
+                0: begin
+                    // Build buffer message: "A=X B=Y BUS=Z C=W\r\n"
+                    buffer[0]  <= "A";
+                    buffer[1]  <= "=";
+                    buffer[2]  <= nibble_to_ascii(A);
+                    buffer[3]  <= " ";
+                    buffer[4]  <= "B";
+                    buffer[5]  <= "=";
+                    buffer[6]  <= nibble_to_ascii(B);
+                    buffer[7]  <= " ";
+                    buffer[8]  <= "S";  // "SUM" simplified to "S"
+                    buffer[9]  <= "=";
+                    buffer[10] <= nibble_to_ascii(BUS);
+                    buffer[11] <= " ";
+                    buffer[12] <= "C";
+                    buffer[13] <= "=";
+                    buffer[14] <= (CARRY) ? "1" : "0";
+                    buffer[15] <= "\n";  // newline (LF)
+
+                    idx <= 0;
+                    state <= 1;
+                end
+
+                1: begin
+                    tx_data  <= buffer[idx];
+                    tx_start <= 1'b1;
+                    idx <= idx + 1;
+                    if (idx == 15)
+                        state <= 2;
+                end
+
+                2: begin
+                    tx_start <= 1'b0;
+                    delay_counter <= delay_counter + 1;
+                    if (delay_counter == 16'd50000) begin
+                        delay_counter <= 0;
+                        state <= 0;
+                    end
+                end
+            endcase
+        end
+    end
+
+endmodule
+
+`default_nettype wire
