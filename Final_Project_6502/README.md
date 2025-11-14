@@ -5,7 +5,7 @@ Language: Verilog HDL
 Status: Fully Functional Soft‑Core 6502 CPU Executing WozMon Firmware  
 
 ---
-<img src="./img/mos_6502.jpg" width="1000">
+<img src="./img/mos_6502.jpg" width="500">
 # 🧠 1. Introduction  
 
 The project implements a **fully functional MOS 6502 microprocessor** entirely in **Verilog**.  
@@ -363,7 +363,7 @@ These expand the CPU into a full **FPGA-based computer system** with display out
 
 # 📈 9. Simulation  Sections
 
-### 9.1 ALU Operation  
+### 9.1 MPU Operation  
 <img src="./img/GUI_sim.jpeg" width="1000">
 
 ### 9.2 WozMon Boot Sequence  
