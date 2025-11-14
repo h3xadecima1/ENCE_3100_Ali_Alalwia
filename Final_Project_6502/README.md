@@ -3,9 +3,9 @@ Author: Ali Alalwia
 Platform: Intel/Altera DE10‑Lite FPGA  
 Language: Verilog HDL  
 Status: Fully Functional Soft‑Core 6502 CPU Executing WozMon Firmware  
+<img src="./img/mos_6502.jpg" width="500">
 
 ---
-<img src="./img/mos_6502.jpg" width="500">
 # 🧠 1. Introduction  
 
 The project implements a **fully functional MOS 6502 microprocessor** entirely in **Verilog**.  
