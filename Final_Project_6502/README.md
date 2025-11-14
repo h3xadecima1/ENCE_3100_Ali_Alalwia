@@ -364,10 +364,10 @@ These expand the CPU into a full **FPGA-based computer system** with display out
 # 📈 9. Simulation  Sections
 
 ### 9.1 ALU Operation  
-<img src="./img/GUI_sim.JPEG" width="500">
+<img src="./img/GUI_sim.jpeg" width="500">
 
 ### 9.2 WozMon Boot Sequence  
-<img src="./img/CLI_sim.JPEG" width="500">
+<img src="./img/CLI_sim.jpeg" width="500">
 
 ### 9.3 Revisions 
 Throughout this project multiple versions were created umtil arriving to this final code 
