@@ -1,4 +1,4 @@
-# 📘 6502 FPGA CPU Core — Full Project Report & Documentation
+#  6502 FPGA CPU Core — Full Project Report & Documentation
 Author: Ali Alalwia  
 Platform: Intel/Altera DE10‑Lite FPGA  
 Language: Verilog HDL  
