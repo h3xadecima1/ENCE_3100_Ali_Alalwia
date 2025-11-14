@@ -1,0 +1,134 @@
+`timescale 1ns / 1ps
+`default_nettype none
+// ================================================================
+// main_fpga.v – DE10-Lite Top-Level with CPU, UART, and VGA
+// ================================================================
+// • KEY[0] = Reset (active high)
+// • KEY[1] = Manual step
+// • SW[0]  = Step mode (1=manual step, 0=auto-run)
+// • UART TX → GPIO[33] (USB dongle RX)
+// • UART RX ← GPIO[35] (USB dongle TX)
+// • VGA output connected to 15-pin port
+// ================================================================
+module main_fpga (
+    input  wire CLOCK_50,      // 50 MHz base clock
+    input  wire [1:0] KEY,     // KEY[0]=Reset, KEY[1]=Step
+    input  wire [9:0] SW,      // SW[0]=Run/Step
+    output wire [9:0] LEDR,    // LEDs for A + activity
+    output wire [6:0] HEX0, HEX1, HEX2, HEX3,
+    inout  wire [35:0] GPIO,   // GPIO header (33=TX, 35=RX)
+    // VGA signals
+    output wire VGA_HS, VGA_VS,
+    output wire [3:0] VGA_R, VGA_G, VGA_B
+);
+
+    // ------------------------------------------------------------
+    // Reset and Clock Setup
+    // ------------------------------------------------------------
+    wire reset_n   = KEY[0];
+    wire step_mode = SW[0];  // 1 = manual step, 0 = auto-run
+    wire clk_run;
+    wire clk_step;
+    wire clk_sys;
+
+    // Clock divider: 50 MHz → 1 Hz (for auto mode)
+    clock_divider #(.DIVIDER(25_000_000)) u_div (
+        .clk_in(CLOCK_50),
+        .clk_out(clk_run)
+    );
+
+    // One-pulse generator for step button
+    step_pulse u_step (
+        .clk_in(CLOCK_50),
+        .btn(KEY[1]),
+        .pulse_out(clk_step)
+    );
+
+    // System clock source selection
+    assign clk_sys = (step_mode) ? clk_step : clk_run;
+
+    // VGA pixel clock (25 MHz)
+    wire clk_25;
+    clock_divider #(.DIVIDER(2)) u_vga_clk (
+        .clk_in(CLOCK_50),
+        .clk_out(clk_25)
+    );
+
+    // ------------------------------------------------------------
+    // CPU + Memory + UART + VGA
+    // ------------------------------------------------------------
+    wire [15:0] address_bus, dbg_PC;
+    wire [7:0]  data_bus, dbg_A, dbg_X, dbg_Y, dbg_P;
+    wire        mem_read, mem_write;
+    wire        rdy = 1'b1;
+
+    // UART
+    wire uart_tx_sig;
+
+    // VGA bus
+    wire [10:0] vga_addr;
+    wire [7:0]  vga_data;
+
+    // Instantiate Memory Interface (RAM + ROM + UART + VRAM)
+    memory_interface u_memif (
+        .clk(clk_sys),
+        .reset_n(reset_n),
+        .address(address_bus),
+        .data_out(data_bus),
+        .mem_read_req(mem_read),
+        .mem_write_req(mem_write),
+        .data_bus(data_bus),
+        .uart_rx(GPIO[35]),
+        .uart_tx(uart_tx_sig),
+        .vga_addr(vga_addr),
+        .vga_data(vga_data)
+    );
+
+    // Drive GPIO pin for USB UART TX (GPIO[33] → USB dongle RX)
+    assign GPIO[33] = uart_tx_sig;
+
+    // CPU Core
+    main u_main (
+        .clk(clk_sys),
+        .reset_n(reset_n),
+        .rdy(rdy),
+        .address_bus(address_bus),
+        .data_bus(data_bus),
+        .mem_read(mem_read),
+        .mem_write(mem_write),
+        .dbg_A(dbg_A),
+        .dbg_X(dbg_X),
+        .dbg_Y(dbg_Y),
+        .dbg_P(dbg_P),
+        .dbg_PC(dbg_PC)
+    );
+
+    // ------------------------------------------------------------
+    // VGA Display (Text Mode)
+    // ------------------------------------------------------------
+    vga_text u_vga (
+        .clk_25mhz(clk_25),
+        .vram_addr(vga_addr),
+        .vram_data(vga_data),
+        .hsync(VGA_HS),
+        .vsync(VGA_VS),
+        .vga_r(VGA_R),
+        .vga_g(VGA_G),
+        .vga_b(VGA_B)
+    );
+
+    // ------------------------------------------------------------
+    // LEDs and HEX display for debug
+    // ------------------------------------------------------------
+    assign LEDR[7:0] = dbg_A;      // show accumulator A
+    assign LEDR[8]   = mem_read;   // read indicator
+    assign LEDR[9]   = mem_write;  // write indicator
+
+    // HEX shows lower 16 bits of PC
+    hex_display u_hex0 (.value(dbg_PC[3:0]),   .segments(HEX0));
+    hex_display u_hex1 (.value(dbg_PC[7:4]),   .segments(HEX1));
+    hex_display u_hex2 (.value(dbg_PC[11:8]),  .segments(HEX2));
+    hex_display u_hex3 (.value(dbg_PC[15:12]), .segments(HEX3));
+
+endmodule
+`default_nettype wire

@@ -1,0 +1,55 @@
+`timescale 1ns / 1ps
+`default_nettype none
+// ============================================================
+// Project     : 6502 FPGA Processor System
+// File        : vga_text.v
+// Description : VGA test pattern generator
+//
+// Author      : Ali G
+// Created On  : 11-13-2025
+// Version     : 1.0
+// Target      : Intel MAX 10 / DE10-Lite FPGA
+//
+// License:
+//   This source code is provided for educational and research
+//   purposes only. Redistribution and modification are permitted
+//   provided that proper credit is given to the original author.
+//
+// ============================================================
+
+module vga_test (
+    input  wire CLOCK_50,
+    output wire VGA_HS, VGA_VS,
+    output wire [3:0] VGA_R, VGA_G, VGA_B,
+    output wire [9:0] LEDR
+);
+    wire clk_25, pll_locked;
+
+    pll_vga u_pll (
+        .areset(1'b0),
+        .inclk0(CLOCK_50),
+        .c0(clk_25),
+        .locked(pll_locked)
+    );
+    assign LEDR[0] = pll_locked;
+
+    reg [9:0] h = 0, v = 0;
+    localparam H_VISIBLE=640, H_FRONT=16, H_SYNC=96, H_BACK=48, H_TOTAL=800;
+    localparam V_VISIBLE=480, V_FRONT=10, V_SYNC=2, V_BACK=33, V_TOTAL=525;
+
+    always @(posedge clk_25) begin
+        if (h == H_TOTAL-1) begin
+            h <= 0;
+            if (v == V_TOTAL-1) v <= 0;
+            else v <= v+1;
+        end else h <= h+1;
+    end
+
+    assign VGA_HS = ~(h >= H_VISIBLE+H_FRONT && h < H_VISIBLE+H_FRONT+H_SYNC);
+    assign VGA_VS = ~(v >= V_VISIBLE+V_FRONT && v < V_VISIBLE+V_FRONT+V_SYNC);
+
+    wire visible = (h < H_VISIBLE) && (v < V_VISIBLE);
+    assign VGA_R = visible ? 4'hF : 0;
+    assign VGA_G = 0;
+    assign VGA_B = 0;
+endmodule

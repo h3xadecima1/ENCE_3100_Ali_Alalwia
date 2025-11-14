@@ -1,0 +1,63 @@
+`timescale 1ns/1ps
+`default_nettype none
+
+module vga_text #(
+    parameter H_VISIBLE = 640,
+    parameter V_VISIBLE = 480
+)(
+    input  wire        clk_25mhz,
+    input  wire [7:0]  vram_data,   // character from video RAM
+    output wire [10:0] vram_addr,   // address into video RAM
+    output wire        hsync,
+    output wire        vsync,
+    output wire [3:0]  vga_r,
+    output wire [3:0]  vga_g,
+    output wire [3:0]  vga_b
+);
+    // -----------------------------------
+    // VGA timing
+    // -----------------------------------
+    parameter H_FRONT=16, H_SYNC=96, H_BACK=48, H_TOTAL=800;
+    parameter V_FRONT=10, V_SYNC=2,  V_BACK=33, V_TOTAL=525;
+    reg [9:0] h_count=0, v_count=0;
+    always @(posedge clk_25mhz) begin
+        if (h_count==H_TOTAL-1) begin
+            h_count<=0;
+            v_count<=(v_count==V_TOTAL-1)?0:v_count+1;
+        end else h_count<=h_count+1;
+    end
+    assign hsync=~(h_count>=H_VISIBLE+H_FRONT && h_count<H_VISIBLE+H_FRONT+H_SYNC);
+    assign vsync=~(v_count>=V_VISIBLE+V_FRONT && v_count<V_VISIBLE+V_FRONT+V_SYNC);
+    wire video_active=(h_count<H_VISIBLE && v_count<V_VISIBLE);
+
+    // -----------------------------------
+    // Character grid: 40×25 (8×8 each)
+    // -----------------------------------
+    wire [6:0] char_x=h_count[9:3]; // 0–79
+    wire [5:0] char_y=v_count[8:3]; // 0–59
+    wire [2:0] row=v_count[2:0];
+    wire [2:0] col=h_count[2:0];
+
+    assign vram_addr = char_y*40 + char_x;
+
+    // -----------------------------------
+    // Font ROM lookup
+    // -----------------------------------
+    wire [7:0] font_pixels;
+    font8x8 font(
+        .char_code(vram_data),
+        .row(row),
+        .pixels(font_pixels)
+    );
+
+    wire pixel_on = font_pixels[7-col];
+
+    // -----------------------------------
+    // VGA color: cyan on blue
+    // -----------------------------------
+    assign vga_r = (video_active && pixel_on) ? 4'h0 : 4'h0;
+    assign vga_g = (video_active && pixel_on) ? 4'hF : 4'h0;
+    assign vga_b = (video_active) ? 4'h8 : 4'h0;
+
+endmodule
+`default_nettype wire

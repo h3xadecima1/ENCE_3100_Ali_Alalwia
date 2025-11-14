@@ -1,0 +1,45 @@
+`timescale 1ns/1ps
+`default_nettype none
+// ============================================================
+// Project     : 6502 FPGA Processor System
+// File        : rom_program.v
+// Description : Loads HEX files into ROM/RAM
+//
+// Author      : Ali G
+// Created On  : 11-13-2025
+// Version     : 1.0
+// Target      : Intel MAX 10 / DE10-Lite FPGA
+//
+// License:
+//   This source code is provided for educational and research
+//   purposes only. Redistribution and modification are permitted
+//   provided that proper credit is given to the original author.
+//
+// ============================================================
+
+module rom_program (
+    input  wire [15:0] address,
+    output reg  [7:0]  data_out
+);
+    reg [7:0] rom [0:16383];  // 16 KB ROM
+    integer i;
+
+    initial begin
+        $display("Loading WOZMON ROM from vwoz.hex...");
+        $readmemh("wozmon1.hex", rom);
+		//$readmemh("vwoz.hex", rom);
+        $display("ROM loaded. First 16 bytes:");
+        for (i = 0; i < 16; i = i + 1)
+            $write("%02x ", rom[i]);
+        $write("\n");
+    end
+
+    always @(*) begin
+        if (address >= 16'hC000)
+            data_out = rom[address - 16'hC000];
+        else
+            data_out = 8'h00;
+    end
+endmodule
+
+`default_nettype wire
