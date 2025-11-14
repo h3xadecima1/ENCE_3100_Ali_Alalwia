@@ -373,7 +373,9 @@ These expand the CPU into a full **FPGA-based computer system** with display out
 
 ### 9.3 Revisions 
 Throughout this project multiple versions were created umtil arriving to this final code 
-which is not perfect but the tiemframe for this project was one week
+which is not perfect but the tiemframe for this project was one week  
+
+
 <img src="./img/timeline.jpg" width="500">
 
 ---
