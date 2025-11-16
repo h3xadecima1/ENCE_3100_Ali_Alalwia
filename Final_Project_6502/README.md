@@ -84,7 +84,14 @@ The CPU architecture is implemented faithfully to NMOS 6502 behavior with correc
 │ Stack Unit   │ ($0100 page)
 └──────────────┘
 ```
-## 2.2 Module Structure
+## 2.2 RTL View
+<img src="./img/RTL.png" width="1000">  
+
+## 2.3 Block Diagram
+
+<img src="./img/diagram.png" width="1000">  
+
+## 2.4 Module Structure
 
 ```
 6502_fpga_project/
@@ -146,6 +153,7 @@ The CPU architecture is implemented faithfully to NMOS 6502 behavior with correc
 │   ├── sim8.png
 │   ├── sim9.png
 │   ├── diagram.png
+│   ├── RTL.png
 |   ├── mos_6502.jpg
 │   ├── timeline.jpeg
 │   ├── CLI_sim.jpeg
